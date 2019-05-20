@@ -84,6 +84,9 @@ entries:
     - title: Managing security
       url: /cloud_dashboard_security.html
       output: web
+    - title: Managing images
+      url: /cloud_dashboard_images.html
+      output: web
     - title: Managing instances
       url: /cloud_dashboard_instances.html
       output: web
