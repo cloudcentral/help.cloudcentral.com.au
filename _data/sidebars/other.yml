@@ -97,4 +97,22 @@ entries:
        url: /cloud_dashboard_networks.html#create-a-router
      - title: Create port
        url: /cloud_dashboard_networks.html#create-a-port
+     - title: Create container
+       url: /cloud_dashboard_object_containers.html#create-a-container
+     - title: Upload object
+       url: /cloud_dashboard_object_containers.html#upload-an-object
+     - title: Manage object
+       url: /cloud_dashboard_object_containers.html#manage-an-object
+     - title: Create volume
+       url: /cloud_dashboard_volumes.html#create-a-volume
+     - title: Attach volume
+       url: /cloud_dashboard_volumes.html#attach-a-volume-to-an-instance
+     - title: Detach volume
+       url: /cloud_dashboard_volumes.html#detach-a-volume-to-an-instance
+     - title: Snapshot volume
+       url: /cloud_dashboard_volumes.html#create-a-snapshot-from-a-volume
+     - title: edit volume
+       url: /cloud_dashboard_volumes.html#edit-a-volume
+     - title: delete volume
+       url: /cloud_dashboard_volumes.html#delete-a-volume
 
