@@ -6,7 +6,6 @@ last_updated: April 11, 2018
 summary: "How to upload an image for your instances to use"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_images.html
-published: false
 folder: cloud
 ---
 

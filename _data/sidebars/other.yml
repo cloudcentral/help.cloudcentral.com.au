@@ -115,4 +115,10 @@ entries:
        url: /cloud_dashboard_volumes.html#edit-a-volume
      - title: delete volume
        url: /cloud_dashboard_volumes.html#delete-a-volume
+     - title: Upload image
+       url: /cloud_dashboard_images.html#upload-an-image
+     - title: Update image
+       url: /cloud_dashboard_images.html#update-an-image
+     - title: Delete image
+       url: /cloud_dashboard_images.html#delete-an-image
 
