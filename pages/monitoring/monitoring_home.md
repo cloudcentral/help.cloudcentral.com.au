@@ -21,7 +21,7 @@ folder: monitoring
                 <div class="panel-body">
                     <h4>Getting started</h4>
                     <p>Getting started with the Monitoring services.</p>
-                    <a href="/monitoring_getting_started.html" class="btn btn-primary">Learn More</a>
+                    <a href="monitoring_getting_started.html" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
         </div>
