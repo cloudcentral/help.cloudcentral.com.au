@@ -89,8 +89,12 @@ entries:
      - title: Manage instance
        url: /cloud_dashboard_instances.html#manage-an-instance
 
-
-
      - title: Launch instance
        url: /cloud_dashboard_instances.html#launch-an-instance
+     - title: Create network
+       url: /cloud_dashboard_networks.html#create-a-network
+     - title: Create router
+       url: /cloud_dashboard_networks.html#create-a-router
+     - title: Create port
+       url: /cloud_dashboard_networks.html#create-a-port
 
