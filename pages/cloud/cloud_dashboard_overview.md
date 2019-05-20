@@ -40,11 +40,11 @@ As a cloud end user, you can use the OpenStack dashboard to provision your own r
   - [Upload an object][cloud_dashboard_object_containers.html#upload-an-object]
   - [Manage an object][cloud_dashboard_object_containers.html#manage-an-object]
 * [Create and manage volumes][cloud_dashboard_volumes]
-  - [Create a volume][cloud_dashboard_object_volumes.html#create-a-volume]
-  - [Attach a volume to an instance][cloud_dashboard_object_volumes.html#attach-a-volume-to-an-instance]
-  - [Detach a volume to an instance][cloud_dashboard_object_volumes.html#detach-a-volume-from-an-instance]
-  - [Create a snapshot from a volume][cloud_dashboard_object_volumes.html#create-a-snapshot-from-a-volume]
-  - [Edit a volume][cloud_dashboard_object_volumes.html#edit-a-volume]
-  - [Delete a volume][cloud_dashboard_object_volumes.html#delete-a-volume]
+  - [Create a volume][cloud_dashboard_volumes.html#create-a-volume]
+  - [Attach a volume to an instance][cloud_dashboard_volumes.html#attach-a-volume-to-an-instance]
+  - [Detach a volume to an instance][cloud_dashboard_volumes.html#detach-a-volume-from-an-instance]
+  - [Create a snapshot from a volume][cloud_dashboard_volumes.html#create-a-snapshot-from-a-volume]
+  - [Edit a volume][cloud_dashboard_volumes.html#edit-a-volume]
+  - [Delete a volume][cloud_dashboard_volumes.html#delete-a-volume]
 
 {% include links.html %}
