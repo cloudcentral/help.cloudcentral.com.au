@@ -77,9 +77,9 @@ You have successfully uploaded an object to the container.
 1. Select the container in which you want to store your object.
 1. Click the menu button and choose Copy from the dropdown list.
 1. In the Copy Object launch dialog box, enter the following values:
-   - Destination Container: Choose the destination container from the list.
-   - Path: Specify a path in which the new copy should be stored inside of the selected container.
-   - Destination object name: Enter a name for the object in the new container.
+   - **Destination Container**: Choose the destination container from the list.
+   - **Path**: Specify a path in which the new copy should be stored inside of the selected container.
+   - **Destination object name**: Enter a name for the object in the new container.
 1. Click Copy Object.
 
 **To create a metadata-only object without a file**

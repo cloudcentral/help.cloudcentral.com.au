@@ -22,7 +22,7 @@ Use the nova floating-ip-\* commands to manage floating IP addresses.
 
 ## List floating IP address information {#list_floating_ip}
 To list all pools that provide floating IP addresses, run:
-```
+```sh
 $ nova floating-ip-pool-list
 +--------+
 | name   |
@@ -34,7 +34,7 @@ $ nova floating-ip-pool-list
 {% include note.html content="If this list is empty, the cloud administrator must configure a pool of floating IP addresses." %}
 
 To list all floating IP addresses that are allocated to the current project, run:
-```
+```sh
 $ nova floating-ip-list
 +--------------+--------------------------------------+----------+--------+
 | Ip           | Instance Id                          | Fixed Ip | Pool   |
@@ -49,7 +49,7 @@ For each floating IP address that is allocated to the current project, the comma
 You can assign a floating IP address to a project and to an instance.
 
 1. Run the following command to allocate a floating IP address to the current project. By default, the floating IP address is allocated from the public pool. The command outputs the allocated IP address:
-   ```
+   ```sh
    $ nova floating-ip-create
    +--------------+-------------+----------+--------+
    | IP           | Instance Id | Fixed IP | Pool   |
@@ -63,7 +63,7 @@ You can assign a floating IP address to a project and to an instance.
    {{site.data.alerts.end}}
 
 1. List all project instances with which a floating IP address could be associated.
-   ```
+   ```sh
    $ nova list
    +---------------------+------+---------+------------+-------------+------------------+
    | ID                  | Name | Status  | Task State | Power State | Networks         |
@@ -73,15 +73,15 @@ You can assign a floating IP address to a project and to an instance.
    +---------------------+------+---------+------------+-------------+------------------+
    ```
 1. Associate an IP address with an instance in the project, as follows:
-   ```
+   ```sh
    $ nova floating-ip-associate INSTANCE_NAME_OR_ID FLOATING_IP_ADDRESS
    ```
    For example:
-   ```
+   ```sh
    $ nova floating-ip-associate VM1 172.24.4.225
    ```
    The instance is now associated with two IP addresses:
-   ```
+   ```sh
    $ nova list
    +------------------+------+--------+------------+-------------+-------------------------------+
    | ID               | Name | Status | Task State | Power State | Networks                      |
@@ -99,11 +99,11 @@ You can assign a floating IP address to a project and to an instance.
 
 ## Disassociate floating IP addresses {#associate_floating_ip}
 To disassociate a floating IP address from an instance:
-```
+```sh
 $ nova floating-ip-disassociate INSTANCE_NAME_OR_ID FLOATING_IP_ADDRESS
 ```
 To remove the floating IP address from a project:
-```
+```sh
 $ nova floating-ip-delete FLOATING_IP_ADDRESS
 ```
 The IP address is returned to the pool of IP addresses that is available for all projects. If the IP address is still associated with a running instance, it is automatically disassociated from that instance.

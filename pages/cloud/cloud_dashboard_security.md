@@ -38,11 +38,11 @@ This procedure can be adjusted as necessary to add additional security group rul
 
 1. In the Add Rule dialog box, enter the following values:
 
-   * Rule: SSH
-   * Remote: CIDR
-   * CIDR: 0.0.0.0/0
+   * **Rule**: SSH * **Remote**: CIDR
+   * **CIDR**: 0.0.0.0/0
 
-   {% include note.html content="To accept requests from a particular range of IP addresses, specify the IP address block in the CIDR box." %}
+   {% include note.html content="To accept requests from a particular range of
+   IP addresses, specify the IP address block in the CIDR box." %}
 
 1. Click Add.
 
@@ -52,10 +52,10 @@ This procedure can be adjusted as necessary to add additional security group rul
 
 1. In the Add Rule dialog box, enter the following values:
 
-   * Rule: All ICMP
-   * Direction: Ingress
-   * Remote: CIDR
-   * CIDR: 0.0.0.0/0
+   * **Rule**: All ICMP
+   * **Direction**: Ingress
+   * **Remote**: CIDR
+   * **CIDR**: 0.0.0.0/0
 1. Click Add.
 
    Instances will now accept all incoming ICMP packets.
@@ -88,7 +88,7 @@ Create at least one key pair for each project.
 
 1. To change its permissions so that only you can read and write to the file, run the following command:
 
-   ```
+   ```sh
    $ chmod 0600 yourPrivateKey.pem
    ```
 
@@ -96,7 +96,7 @@ Create at least one key pair for each project.
 
 1. To make the key pair known to SSH, run the ssh-add command.
 
-   ```
+   ```sh
    $ ssh-add yourPrivateKey.pem
    ```
 

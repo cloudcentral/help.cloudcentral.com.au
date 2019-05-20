@@ -30,7 +30,7 @@ When you source the file, environment variables are set for your current shell. 
 
    In the following example, the demo-openrc.sh file is sourced for the demo project:
 
-   ```
+   ```sh
    $ . demo-openrc.sh
    ```
 
@@ -41,7 +41,7 @@ Alternatively, you can create the PROJECT-openrc.sh file from scratch, if you ca
 
 1. In a text editor, create a file named PROJECT-openrc.sh and add the following authentication information:
 
-   ```
+   ```sh
    export OS_USERNAME=username
    export OS_PASSWORD=password
    export OS_TENANT_NAME=projectName
@@ -56,7 +56,7 @@ Alternatively, you can create the PROJECT-openrc.sh file from scratch, if you ca
 
 1. On any shell from which you want to run OpenStack commands, source the PROJECT-openrc.sh file for the respective project. In this example, you source the admin-openrc.sh file for the admin project:
 
-   ```
+   ```sh
    $ . admin-openrc.sh
    ```
 
@@ -67,7 +67,7 @@ Alternatively, you can create the PROJECT-openrc.sh file from scratch, if you ca
 ## Override environment variable values
 When you run OpenStack client commands, you can override some environment variable settings by using the options that are listed at the end of the help output of the various client commands. For example, you can override the OS_PASSWORD setting in the PROJECT-openrc.sh file by specifying a password on a openstack command, as follows:
 
-```
+```sh
 $ openstack --os-password PASSWORD server list
 ```
 

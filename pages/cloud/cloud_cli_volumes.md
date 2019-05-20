@@ -86,7 +86,7 @@ Show information for your volume:
 $ openstack volume show 573e024d-5235-49ce-8332-be1576d323f8
 ```
 The output shows that the volume is attached to the server with ID 84c6e57d-a6b1-44b6-81eb-fcb36afd31b5, is in the nova availability zone, and is bootable.
-```
+```sh
 +------------------------------+-----------------------------------------------+
 | Field                        | Value                                         |
 +------------------------------+-----------------------------------------------+

@@ -14,19 +14,19 @@ While this is technically the simplest complete load balancing solution that can
 
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   We want to configure a basic load balancer that is accessible from the internet, which distributes web requests to the back-end servers.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * We want to configure a basic load balancer that is accessible from the internet, which distributes web requests to the back-end servers.
 
 1. Solution:
 
-   Create load balancer lb1 on subnet public-subnet.
-   Create listener listener1.
-   Create pool pool1 as listener1’s default pool.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Create load balancer lb1 on subnet public-subnet.
+   * Create listener listener1.
+   * Create pool pool1 as listener1’s default pool.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
 
 1. CLI commands:
-    ```
+    ```sh
     openstack loadbalancer create --name lb1 --vip-subnet-id public-subnet
     # Re-run the following until lb1 shows ACTIVE and ONLINE statuses:
     openstack loadbalancer show lb1
@@ -41,22 +41,22 @@ This is the simplest recommended load balancing solution for HTTP applications. 
 
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
-   These back-end servers have been configured with a health check at the URL path “/healthcheck”. See HTTP health monitors below.
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   We want to configure a basic load balancer that is accessible from the internet, which distributes web requests to the back-end servers, and which checks the “/healthcheck” path to ensure back-end member health.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
+   * These back-end servers have been configured with a health check at the URL path “/healthcheck”. See HTTP health monitors below.
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * We want to configure a basic load balancer that is accessible from the internet, which distributes web requests to the back-end servers, and which checks the “/healthcheck” path to ensure back-end member health.
 
 1. Solution:
 
-   Create load balancer lb1 on subnet public-subnet.
-   Create listener listener1.
-   Create pool pool1 as listener1’s default pool.
-   Create a health monitor on pool1 which tests the “/healthcheck” path.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Create load balancer lb1 on subnet public-subnet.
+   * Create listener listener1.
+   * Create pool pool1 as listener1’s default pool.
+   * Create a health monitor on pool1 which tests the “/healthcheck” path.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openstack loadbalancer create --name lb1 --vip-subnet-id public-subnet
     # Re-run the following until lb1 shows ACTIVE and ONLINE statuses:
     openstack loadbalancer show lb1
@@ -72,24 +72,24 @@ It can be beneficial to use a floating IP when setting up a load balancer’s VI
 
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
-   These back-end servers have been configured with a health check at the URL path “/healthcheck”. See HTTP health monitors below.
-   Neutron network public is a shared external network created by the cloud operator which is reachable from the internet.
-   We want to configure a basic load balancer that is accessible from the internet, which distributes web requests to the back-end servers, and which checks the “/healthcheck” path to ensure back-end member health. Further, we want to do this using a floating IP.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
+   * These back-end servers have been configured with a health check at the URL path “/healthcheck”. See HTTP health monitors below.
+   * Neutron network public is a shared external network created by the cloud operator which is reachable from the internet.
+   * We want to configure a basic load balancer that is accessible from the internet, which distributes web requests to the back-end servers, and which checks the “/healthcheck” path to ensure back-end member health. Further, we want to do this using a floating IP.
 
 1. Solution:
 
-   Create load balancer lb1 on subnet private-subnet.
-   Create listener listener1.
-   Create pool pool1 as listener1’s default pool.
-   Create a health monitor on pool1 which tests the “/healthcheck” path.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
-   Create a floating IP address on public-subnet.
-   Associate this floating IP with the lb1’s VIP port.
+   * Create load balancer lb1 on subnet private-subnet.
+   * Create listener listener1.
+   * Create pool pool1 as listener1’s default pool.
+   * Create a health monitor on pool1 which tests the “/healthcheck” path.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Create a floating IP address on public-subnet.
+   * Associate this floating IP with the lb1’s VIP port.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openstack loadbalancer create --name lb1 --vip-subnet-id private-subnet
     # Re-run the following until lb1 shows ACTIVE and ONLINE statuses:
     openstack loadbalancer show lb1
@@ -106,23 +106,23 @@ It can be beneficial to use a floating IP when setting up a load balancer’s VI
 ## Deploy a basic HTTP load balancer with session persistence
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
-   The application is written such that web clients should always be directed to the same back-end server throughout their web session, based on an application cookie inserted by the web application named ‘PHPSESSIONID’.
-   These back-end servers have been configured with a health check at the URL path “/healthcheck”. See HTTP health monitors below.
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   We want to configure a basic load balancer that is accessible from the internet, which distributes web requests to the back-end servers, persists sessions using the PHPSESSIONID as a key, and which checks the “/healthcheck” path to ensure back-end member health.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
+   * The application is written such that web clients should always be directed to the same back-end server throughout their web session, based on an application cookie inserted by the web application named ‘PHPSESSIONID’.
+   * These back-end servers have been configured with a health check at the URL path “/healthcheck”. See HTTP health monitors below.
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * We want to configure a basic load balancer that is accessible from the internet, which distributes web requests to the back-end servers, persists sessions using the PHPSESSIONID as a key, and which checks the “/healthcheck” path to ensure back-end member health.
 
 1. Solution:
 
-   Create load balancer lb1 on subnet public-subnet.
-   Create listener listener1.
-   Create pool pool1 as listener1’s default pool which defines session persistence on the ‘PHPSESSIONID’ cookie.
-   Create a health monitor on pool1 which tests the “/healthcheck” path.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Create load balancer lb1 on subnet public-subnet.
+   * Create listener listener1.
+   * Create pool pool1 as listener1’s default pool which defines session persistence on the ‘PHPSESSIONID’ cookie.
+   * Create a health monitor on pool1 which tests the “/healthcheck” path.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openstack loadbalancer create --name lb1 --vip-subnet-id public-subnet
     # Re-run the following until lb1 shows ACTIVE and ONLINE statuses:
     openstack loadbalancer show lb1
@@ -138,22 +138,22 @@ This is generally suitable when load balancing a non-HTTP TCP-based service.
 
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an custom application on TCP port 23456
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   We want to configure a basic load balancer that is accessible from the internet, which distributes requests to the back-end servers.
-   We want to employ a TCP health check to ensure that the back-end servers are available.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an custom application on TCP port 23456
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * We want to configure a basic load balancer that is accessible from the internet, which distributes requests to the back-end servers.
+   * We want to employ a TCP health check to ensure that the back-end servers are available.
 
 1. Solution:
 
-   Create load balancer lb1 on subnet public-subnet.
-   Create listener listener1.
-   Create pool pool1 as listener1’s default pool.
-   Create a health monitor on pool1 which probes pool1’s members’ TCP service port.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Create load balancer lb1 on subnet public-subnet.
+   * Create listener listener1.
+   * Create pool pool1 as listener1’s default pool.
+   * Create a health monitor on pool1 which probes pool1’s members’ TCP service port.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openstack loadbalancer create --name lb1 --vip-subnet-id public-subnet
     # Re-run the following until lb1 shows ACTIVE and ONLINE statuses:
     openstack loadbalancer show lb1
@@ -169,22 +169,22 @@ This solution limits the bandwidth available through the Load Balancer’s VIP b
 
 1. Scenario description:
 
-   QoS-policy created from Neutron with bandwidth-limit-rules by us.
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   We want to configure a basic load balancer and want to limit the traffic bandwidth when web traffic reaches the vip.
+   * QoS-policy created from Neutron with bandwidth-limit-rules by us.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with an HTTP application on TCP port 80.
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * We want to configure a basic load balancer and want to limit the traffic bandwidth when web traffic reaches the vip.
 
 1. Solution:
 
-   Create QoS policy qos-policy-bandwidth with bandwidth_limit in Neutron.
-   Create load balancer lb1 on subnet public-subnet with the id of qos-policy-bandwidth.
-   Create listener listener1.
-   Create pool pool1 as listener1’s default pool.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Create QoS policy qos-policy-bandwidth with bandwidth_limit in Neutron.
+   * Create load balancer lb1 on subnet public-subnet with the id of qos-policy-bandwidth.
+   * Create listener listener1.
+   * Create pool pool1 as listener1’s default pool.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openstack network qos policy create qos-policy-bandwidth
     openstack network qos rule create --type bandwidth_limit --max-kbps 1024 --max-burst-kbits 1024 qos-policy-bandwidth
     openstack loadbalancer create --name lb1 --vip-subnet-id public-subnet --vip-qos-policy-id qos-policy-bandwidth
@@ -201,22 +201,22 @@ A non-terminated HTTPS load balancer acts effectively like a generic TCP load ba
 
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with a TLS-encrypted web application on TCP port 443.
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   We want to configure a basic load balancer that is accessible from the internet, which distributes requests to the back-end servers.
-   We want to employ a TCP health check to ensure that the back-end servers are available.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with a TLS-encrypted web application on TCP port 443.
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * We want to configure a basic load balancer that is accessible from the internet, which distributes requests to the back-end servers.
+   * We want to employ a TCP health check to ensure that the back-end servers are available.
 
 1. Solution:
 
-   Create load balancer lb1 on subnet public-subnet.
-   Create listener listener1.
-   Create pool pool1 as listener1’s default pool.
-   Create a health monitor on pool1 which probes pool1’s members’ TCP service port.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Create load balancer lb1 on subnet public-subnet.
+   * Create listener listener1.
+   * Create pool pool1 as listener1’s default pool.
+   * Create a health monitor on pool1 which probes pool1’s members’ TCP service port.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openstack loadbalancer create --name lb1 --vip-subnet-id public-subnet
     # Re-run the following until lb1 shows ACTIVE and ONLINE statuses:
     openstack loadbalancer show lb1
@@ -232,26 +232,26 @@ With a TLS-terminated HTTPS load balancer, web clients communicate with the load
 
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with regular HTTP application on TCP port 80.
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   A TLS certificate, key, and intermediate certificate chain for www.example.com have been obtained from an external certificate authority. These now exist in the files server.crt, server.key, and ca-chain.crt in the current directory. The key and certificate are PEM-encoded, and the intermediate certificate chain is multiple PEM-encoded certs concatenated together. The key is not encrypted with a passphrase.
-   The admin user on this cloud installation has keystone ID admin_id
-   We want to configure a TLS-terminated HTTPS load balancer that is accessible from the internet using the key and certificate mentioned above, which distributes requests to the back-end servers over the non-encrypted HTTP protocol.
-   Octavia is configured to use barbican for key management.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with regular HTTP application on TCP port 80.
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * A TLS certificate, key, and intermediate certificate chain for www.example.com have been obtained from an external certificate authority. These now exist in the files server.crt, server.key, and ca-chain.crt in the current directory. The key and certificate are PEM-encoded, and the intermediate certificate chain is multiple PEM-encoded certs concatenated together. The key is not encrypted with a passphrase.
+   * The admin user on this cloud installation has keystone ID admin_id
+   * We want to configure a TLS-terminated HTTPS load balancer that is accessible from the internet using the key and certificate mentioned above, which distributes requests to the back-end servers over the non-encrypted HTTP protocol.
+   * Octavia is configured to use barbican for key management.
 
 1. Solution:
 
-   Combine the individual cert/key/intermediates to a single PKCS12 file.
-   Create a barbican secret resource for the PKCS12 file. We will call this tls_secret1.
-   Grant the admin user access to the tls_secret1 barbican resource.
-   Create load balancer lb1 on subnet public-subnet.
-   Create listener listener1 as a TERMINATED_HTTPS listener referencing tls_secret1 as its default TLS container.
-   Create pool pool1 as listener1’s default pool.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Combine the individual cert/key/intermediates to a single PKCS12 file.
+   * Create a barbican secret resource for the PKCS12 file. We will call this tls_secret1.
+   * Grant the admin user access to the tls_secret1 barbican resource.
+   * Create load balancer lb1 on subnet public-subnet.
+   * Create listener listener1 as a TERMINATED_HTTPS listener referencing tls_secret1 as its default TLS container.
+   * Create pool pool1 as listener1’s default pool.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openssl pkcs12 -export -inkey server.key -in server.crt -certfile ca-chain.crt -passout pass: -out server.p12
     openstack secret store --name='tls_secret1' -t 'application/octet-stream' -e 'base64' --payload="$(base64 < server.p12)"
     openstack loadbalancer create --name lb1 --vip-subnet-id public-subnet
@@ -268,26 +268,26 @@ This example is exactly like Deploy a TLS-terminated HTTPS load balancer, except
 
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with regular HTTP application on TCP port 80.
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   TLS certificates, keys, and intermediate certificate chains for www.example.com and www2.example.com have been obtained from an external certificate authority. These now exist in the files server.crt, server.key, ca-chain.crt, server2.crt, server2.key, and ca-chain2.crt in the current directory. The keys and certificates are PEM-encoded, and the intermediate certificate chains are multiple certs PEM-encoded and concatenated together. Neither key is encrypted with a passphrase.
-   The admin user on this cloud installation has keystone ID admin_id
-   We want to configure a TLS-terminated HTTPS load balancer that is accessible from the internet using the keys and certificates mentioned above, which distributes requests to the back-end servers over the non-encrypted HTTP protocol.
-   If a web client connects that is not SNI capable, we want the load balancer to respond with the certificate for www.example.com.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with regular HTTP application on TCP port 80.
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * TLS certificates, keys, and intermediate certificate chains for www.example.com and www2.example.com have been obtained from an external certificate authority. These now exist in the files server.crt, server.key, ca-chain.crt, server2.crt, server2.key, and ca-chain2.crt in the current directory. The keys and certificates are PEM-encoded, and the intermediate certificate chains are multiple certs PEM-encoded and concatenated together. Neither key is encrypted with a passphrase.
+   * The admin user on this cloud installation has keystone ID admin_id
+   * We want to configure a TLS-terminated HTTPS load balancer that is accessible from the internet using the keys and certificates mentioned above, which distributes requests to the back-end servers over the non-encrypted HTTP protocol.
+   * If a web client connects that is not SNI capable, we want the load balancer to respond with the certificate for www.example.com.
 
 1. Solution:
 
-   Combine the individual cert/key/intermediates to single PKCS12 files.
-   Create barbican secret resources for the PKCS12 files. We will call them tls_secret1 and tls_secret2.
-   Grant the admin user access to both tls_secret barbican resources.
-   Create load balancer lb1 on subnet public-subnet.
-   Create listener listener1 as a TERMINATED_HTTPS listener referencing tls_secret1 as its default TLS container, and referencing both tls_secret1 and tls_secret2 using SNI.
-   Create pool pool1 as listener1’s default pool.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Combine the individual cert/key/intermediates to single PKCS12 files.
+   * Create barbican secret resources for the PKCS12 files. We will call them tls_secret1 and tls_secret2.
+   * Grant the admin user access to both tls_secret barbican resources.
+   * Create load balancer lb1 on subnet public-subnet.
+   * Create listener listener1 as a TERMINATED_HTTPS listener referencing tls_secret1 as its default TLS container, and referencing both tls_secret1 and tls_secret2 using SNI.
+   * Create pool pool1 as listener1’s default pool.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openssl pkcs12 -export -inkey server.key -in server.crt -certfile ca-chain.crt -passout pass: -out server.p12
     openssl pkcs12 -export -inkey server2.key -in server2.crt -certfile ca-chain2.crt -passout pass: -out server2.p12
     openstack secret store --name='tls_secret1' -t 'application/octet-stream' -e 'base64' --payload="$(base64 < server.p12)"
@@ -308,27 +308,27 @@ Please note that if you wish all HTTP requests to be redirected to HTTPS (so tha
 
 1. Scenario description:
 
-   Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with regular HTTP application on TCP port 80.
-   Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
-   A TLS certificate, key, and intermediate certificate chain for www.example.com have been obtained from an external certificate authority. These now exist in the files server.crt, server.key, and ca-chain.crt in the current directory. The key and certificate are PEM-encoded, and the intermediate certificate chain is multiple PEM-encoded certs concatenated together. The key is not encrypted with a passphrase.
-   The admin user on this cloud installation has keystone ID admin_id
-   We want to configure a TLS-terminated HTTPS load balancer that is accessible from the internet using the key and certificate mentioned above, which distributes requests to the back-end servers over the non-encrypted HTTP protocol.
-   We also want to configure a HTTP load balancer on the same IP address as the above which serves the exact same content (ie. forwards to the same back-end pool) as the TERMINATED_HTTPS listener.
+   * Back-end servers 192.0.2.10 and 192.0.2.11 on subnet private-subnet have been configured with regular HTTP application on TCP port 80.
+   * Subnet public-subnet is a shared external subnet created by the cloud operator which is reachable from the internet.
+   * A TLS certificate, key, and intermediate certificate chain for www.example.com have been obtained from an external certificate authority. These now exist in the files server.crt, server.key, and ca-chain.crt in the current directory. The key and certificate are PEM-encoded, and the intermediate certificate chain is multiple PEM-encoded certs concatenated together. The key is not encrypted with a passphrase.
+   * The admin user on this cloud installation has keystone ID admin_id
+   * We want to configure a TLS-terminated HTTPS load balancer that is accessible from the internet using the key and certificate mentioned above, which distributes requests to the back-end servers over the non-encrypted HTTP protocol.
+   * We also want to configure a HTTP load balancer on the same IP address as the above which serves the exact same content (ie. forwards to the same back-end pool) as the TERMINATED_HTTPS listener.
 
 1. Solution:
 
-   Combine the individual cert/key/intermediates to a single PKCS12 file.
-   Create a barbican secret resource for the PKCS12 file. We will call this tls_secret1.
-   Grant the admin user access to the tls_secret1 barbican resource.
-   Create load balancer lb1 on subnet public-subnet.
-   Create listener listener1 as a TERMINATED_HTTPS listener referencing tls_secret1 as its default TLS container.
-   Create pool pool1 as listener1’s default pool.
-   Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
-   Create listener listener2 as an HTTP listener with pool1 as its default pool.
+   * Combine the individual cert/key/intermediates to a single PKCS12 file.
+   * Create a barbican secret resource for the PKCS12 file. We will call this tls_secret1.
+   * Grant the admin user access to the tls_secret1 barbican resource.
+   * Create load balancer lb1 on subnet public-subnet.
+   * Create listener listener1 as a TERMINATED_HTTPS listener referencing tls_secret1 as its default TLS container.
+   * Create pool pool1 as listener1’s default pool.
+   * Add members 192.0.2.10 and 192.0.2.11 on private-subnet to pool1.
+   * Create listener listener2 as an HTTP listener with pool1 as its default pool.
 
 1. CLI commands:
 
-    ```
+    ```sh
     openssl pkcs12 -export -inkey server.key -in server.crt -certfile ca-chain.crt -passout pass: -out server.p12
     openstack secret store --name='tls_secret1' -t 'application/octet-stream' -e 'base64' --payload="$(base64 < server.p12)"
     openstack loadbalancer create --name lb1 --vip-subnet-id public-subnet
@@ -398,23 +398,25 @@ If the intermediates chain provided to you is a file that contains what appears 
 
 You may use the binary DER file as-is when building your PKCS12 bundle:
 
-    ```
+    ```sh
     openssl pkcs12 -export -inkey server.key -in server.crt -certfile ca-chain.p7b -passout pass: -out server.p12
     ```
 
 ...or you can convert it to a series of PEM-encoded certificates:
 
-    ```
+    ```sh
     openssl pkcs7 -in intermediates-chain.p7b -inform DER -print_certs -out intermediates-chain.crt
     ```
 
 ...or you can convert it to a PEM-encoded PKCS7 bundle:
 
-    ```
+    ```sh
     openssl pkcs7 -in intermediates-chain.p7b -inform DER -outform PEM -out intermediates-chain.crt
     ```
 
 If the file is not a PKCS7 DER bundle, either of the two openssl pkcs7 commands will fail.
 
 ## Further reading
-For examples of using Layer 7 features for more advanced load balancing, please see: Layer 7 Cookbook
+For examples of using Layer 7 features for more advanced load balancing, please see: [Layer 7 Cookbook][cloud_cli_loadbalancers_layer7]
+
+{% include links.html %}

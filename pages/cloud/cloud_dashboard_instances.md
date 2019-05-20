@@ -124,7 +124,7 @@ Copy the IP address for your instance.
 
 Use the ssh command to make a secure connection to the instance. For example:
 
-```
+```sh
 $ ssh -i MyKey.pem ubuntu@10.0.0.2
 ```
 At the prompt, type yes.

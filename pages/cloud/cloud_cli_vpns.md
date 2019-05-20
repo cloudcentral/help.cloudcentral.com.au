@@ -12,7 +12,7 @@ folder: cloud
 Create the IKE policy, IPsec policy, VPN service, local endpoint group and peer endpoint group. Then, create an IPsec site connection that applies the above policies and service.
 
 1. Create an IKE policy:
-    ```
+    ```sh
     $ openstack vpn ike policy create ikepolicy
       +-------------------------------+----------------------------------------+
       | Field                         | Value                                  |
@@ -31,7 +31,7 @@ Create the IKE policy, IPsec policy, VPN service, local endpoint group and peer 
       +-------------------------------+----------------------------------------+
     ```
 1. Create an IPsec policy:
-    ```
+    ```sh
     $ openstack vpn ipsec policy create ipsecpolicy
       +-------------------------------+----------------------------------------+
       | Field                         | Value                                  |
@@ -50,7 +50,7 @@ Create the IKE policy, IPsec policy, VPN service, local endpoint group and peer 
       +-------------------------------+----------------------------------------+
     ```
 1. Create a VPN service:
-    ```
+    ```sh
     $ openstack vpn service create vpn \
       --router 9ff3f20c-314f-4dac-9392-defdbbb36a66
       +----------------+--------------------------------------+
@@ -75,7 +75,7 @@ Create the IKE policy, IPsec policy, VPN service, local endpoint group and peer 
    The Networking openstackclient requires a router (Name or ID) and name.
 
 1. Create local endpoint group:
-    ```
+    ```sh
     $ openstack vpn endpoint group create ep_subnet \
       --type subnet \
       --value 1f888dd0-2066-42a1-83d7-56518895e47d
@@ -94,7 +94,7 @@ Create the IKE policy, IPsec policy, VPN service, local endpoint group and peer 
    {% include note.html content="The type of a local endpoint group must be subnet." %}
 
 1. Create peer endpoint group:
-    ```
+    ```sh
     $ openstack vpn endpoint group create ep_cidr \
       --type cidr \
       --value 192.168.1.0/24
@@ -114,7 +114,7 @@ Create the IKE policy, IPsec policy, VPN service, local endpoint group and peer 
    {% include note.html content="The type of a peer endpoint group must be cidr." %}
 
 1. Create an ipsec site connection:
-    ```
+    ```sh
     $ openstack vpn ipsec site connection create conn \
       --vpnservice vpn \
       --ikepolicy ikepolicy \

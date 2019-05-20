@@ -29,7 +29,7 @@ Create a non-bootable volume and attach that volume to an instance that you boot
 To create a non-bootable volume, do not create it from an image. The volume must be entirely empty with no partition table and no file system.
 
 1. Create a non-bootable volume.
-   ```
+   ```sh
    $ cinder create --display-name my-volume 8
    +--------------------------------+--------------------------------------+
    |            Property            |                Value                 |
@@ -56,7 +56,7 @@ To create a non-bootable volume, do not create it from an image. The volume must
    +--------------------------------+--------------------------------------+
    ```
 1. List volumes.
-   ```
+   ```sh
    $ cinder list
    +-----------------+-----------+-----------+------+-------------+----------+-------------+
    |       ID        |   Status  |    Name   | Size | Volume Type | Bootable | Attached to |
@@ -65,7 +65,7 @@ To create a non-bootable volume, do not create it from an image. The volume must
    +-----------------+-----------+-----------+------+-------------+----------+-------------+
    ```
 1. Boot an instance from an image and attach the empty volume to the instance.
-   ```
+   ```sh
    $ nova boot --flavor 2 --image 98901246-af91-43d8-b5e6-a4506aa8f369 \
      --block-device source=volume,id=d620d971-b160-4c4e-8652-2513d74e2080,dest=volume,shutdown=preserve \
      myInstanceWithVolume
@@ -108,7 +108,7 @@ To create a non-bootable volume, do not create it from an image. The volume must
 You can create a volume from an existing image, volume, or snapshot. This procedure shows you how to create a volume from an image, and use the volume to boot an instance.
 
 1. List the available images.
-   ```
+   ```sh
    $ openstack image list
    +-----------------+---------------------------------+--------+
    | ID              | Name                            | Status |
@@ -122,7 +122,7 @@ You can create a volume from an existing image, volume, or snapshot. This proced
    Note the ID of the image that you want to use to create a volume.
 
    If you want to create a volume to a specific storage backend, you need to use an image which has cinder_img_volume_type property. In this case, a new volume will be created as storage_backend1 volume type.
-   ```
+   ```sh
    $ openstack image show 98901246-af9...
    +------------------+------------------------------------------------------+
    | Field            | Value                                                |
@@ -148,7 +148,7 @@ You can create a volume from an existing image, volume, or snapshot. This proced
    +------------------+------------------------------------------------------+
    ```
 1. List the available flavors.
-   ```
+   ```sh
    $ openstack flavor list
    +-----+-----------+-------+------+-----------+-------+-----------+
    | ID  | Name      |   RAM | Disk | Ephemeral | VCPUs | Is_Public |
@@ -165,7 +165,7 @@ You can create a volume from an existing image, volume, or snapshot. This proced
 1. To create a bootable volume from an image and launch an instance from this volume, use the --block-device parameter.
 
    For example:
-   ```
+   ```sh
    $ nova boot --flavor FLAVOR --block-device \
      source=SOURCE,id=ID,dest=DEST,size=SIZE,shutdown=PRESERVE,bootindex=INDEX \
      NAME
@@ -197,11 +197,11 @@ You can create a volume from an existing image, volume, or snapshot. This proced
   - ```NAME```. The name for the server.
 
 1. Create a bootable volume from an image. Cinder makes a volume bootable when --image-id parameter is passed.
-   ```
+   ```sh
    $ cinder create --image-id $IMAGE_ID --display_name=bootable_volume $SIZE_IN_GB
    ```
 1. Create a VM from previously created bootable volume. The volume is not deleted when the instance is terminated.
-   ```
+   ```sh
    $ nova boot --flavor 2 \
      --block-device source=volume,id=$VOLUME_ID,dest=volume,size=10,shutdown=preserve,bootindex=0 \
      myInstanceFromVolume
@@ -241,7 +241,7 @@ You can create a volume from an existing image, volume, or snapshot. This proced
    +--------------------------------------+--------------------------------+
    ```
 6. List volumes to see the bootable volume and its attached myInstanceFromVolume instance.
-   ```
+   ```sh
    $ cinder list
    +-------------+--------+-----------------+------+-------------+----------+-------------+
    |      ID     | Status | Display Name    | Size | Volume Type | Bootable | Attached to |
@@ -254,7 +254,7 @@ You can create a volume from an existing image, volume, or snapshot. This proced
 Use the nova boot --swap parameter to attach a swap disk on boot or the nova boot --ephemeral parameter to attach an ephemeral disk on boot. When you terminate the instance, both disks are deleted.
 
 Boot an instance with a 512 MB swap disk and 2 GB ephemeral disk.
-```
+```sh
 $ nova boot --flavor FLAVOR --image IMAGE_ID --swap 512 --ephemeral size=2 NAME
 ```
 {% include note.html content="The flavor defines the maximum swap and ephemeral disk size. You cannot exceed these maximum values." %}

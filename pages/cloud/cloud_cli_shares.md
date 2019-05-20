@@ -14,7 +14,7 @@ A share is provided by file storage. You can give access to a share to instances
 ## Create a share network
 
 1. Create a share network.
-    ```
+    ```sh
     $ manila share-network-create \
         --name mysharenetwork \
         --description "My Manila network" \
@@ -40,7 +40,7 @@ A share is provided by file storage. You can give access to a share to instances
 
 1. List share networks.
 
-    ```
+    ```sh
     $ manila share-network-list
     +--------------------------------------+----------------+
     | id                                   | name           |
@@ -52,7 +52,7 @@ A share is provided by file storage. You can give access to a share to instances
 ## Create a share
 1. Create a share.
 
-    ```
+    ```sh
     $ manila create NFS 1 \
         --name myshare \
         --description "My Manila share" \
@@ -89,7 +89,7 @@ A share is provided by file storage. You can give access to a share to instances
 
 1. Show a share.
 
-    ```
+    ```sh
     $ manila show myshare
     +-----------------------------+---------------------------------------------------------------+
     | Property                    | Value                                                         |
@@ -133,7 +133,7 @@ A share is provided by file storage. You can give access to a share to instances
 
 1. List shares.
 
-    ```
+    ```sh
     $ manila list
     +--------------------------------------+---------+------+-------------+-----------+-----------+-----------------+-----------------------------+-------------------+
     | ID                                   | Name    | Size | Share Proto | Status    | Is Public | Share Type Name | Host                        | Availability Zone |
@@ -144,7 +144,7 @@ A share is provided by file storage. You can give access to a share to instances
 
 1. List share export locations.
 
-    ```
+    ```sh
     $ manila share-export-location-list myshare
     +--------------------------------------+--------------------------------------------------------+-----------+
     | ID                                   | Path                                                   | Preferred |
@@ -157,7 +157,7 @@ A share is provided by file storage. You can give access to a share to instances
 ## Allow read-write access
 1. Allow access.
 
-    ```
+    ```sh
     $ manila access-allow myshare ip 10.0.0.0/24
     +--------------+--------------------------------------+
     | Property     | Value                                |
@@ -173,7 +173,7 @@ A share is provided by file storage. You can give access to a share to instances
 
 1. List access.
 
-    ```
+    ```sh
     $ manila access-list myshare
     +--------------------------------------+-------------+-------------+--------------+--------+
     | id                                   | access_type | access_to   | access_level | state  |
@@ -187,7 +187,7 @@ The access is created.
 ## Allow read-only access
 1. Allow access.
 
-    ```
+    ```sh
     $ manila access-allow myshare ip 20.0.0.0/24 --access-level ro
     +--------------+--------------------------------------+
     | Property     | Value                                |
@@ -203,7 +203,7 @@ The access is created.
 
 1. List access.
 
-    ```
+    ```sh
     $ manila access-list myshare
     +--------------------------------------+-------------+-------------+--------------+--------+
     | id                                   | access_type | access_to   | access_level | state  |
@@ -218,14 +218,14 @@ The access is created.
 ## Deny access
 1. Deny access.
 
-    ```
+    ```sh
     $ manila access-deny myshare 0c8470ca-0d77-490c-9e71-29e1f453bf97
     $ manila access-deny myshare f151ad17-654d-40ce-ba5d-98a5df67aadc
     ```
 
 1. List access.
 
-    ```
+    ```sh
     $ manila access-list myshare
     +----+-------------+-----------+--------------+-------+
     | id | access type | access to | access level | state |
@@ -238,7 +238,7 @@ The access is removed.
 ## Create snapshot
 1. Create a snapshot.
 
-    ```
+    ```sh
     $ manila snapshot-create --name mysnapshot --description "My Manila snapshot" myshare
     +-------------------+--------------------------------------+
     | Property          | Value                                |
@@ -258,7 +258,7 @@ The access is removed.
 
 1. List snapshots.
 
-    ```
+    ```sh
     $ manila snapshot-list
     +--------------------------------------+--------------------------------------+-----------+------------+------------+
     | ID                                   | Share ID                             | Status    | Name       | Share Size |
@@ -270,7 +270,7 @@ The access is removed.
 ## Create share from snapshot
 1. Create a share from a snapshot.
 
-    ```
+    ```sh
     $ manila create NFS 1 \
         --snapshot-id e744ca47-0931-4e81-9d9f-2ead7d7c1640 \
         --share-network mysharenetwork \
@@ -306,7 +306,7 @@ The access is removed.
 
 1. List shares.
 
-    ```
+    ```sh
     $ manila list
     +--------------------------------------+-----------------+------+-------------+-----------+-----------+-----------------+-----------------------------+-------------------+
     | ID                                   | Name            | Size | Share Proto | Status    | Is Public | Share Type Name | Host                        | Availability Zone |
@@ -318,7 +318,7 @@ The access is removed.
 
 1. Show the share created from snapshot.
 
-    ```
+    ```sh
     $ manila show mysharefromsnap
     +-----------------------------+---------------------------------------------------------------+
     | Property                    | Value                                                         |
@@ -363,13 +363,13 @@ The access is removed.
 ## Delete share
 1. Delete a share.
 
-    ```
+    ```sh
     $ manila delete mysharefromsnap
     ```
 
 1. List shares.
 
-    ```
+    ```sh
     $ manila list
     +--------------------------------------+-----------------+------+-------------+-----------+-----------+-----------------+-----------------------------+-------------------+
     | ID                                   | Name            | Size | Share Proto | Status    | Is Public | Share Type Name | Host                        | Availability Zone |
@@ -384,7 +384,7 @@ The share is being deleted.
 ## Delete snapshot
 1. List snapshots before deleting.
 
-    ```
+    ```sh
     $ manila snapshot-list
     +--------------------------------------+--------------------------------------+-----------+------------+------------+
     | ID                                   | Share ID                             | Status    | Name       | Share Size |
@@ -395,13 +395,13 @@ The share is being deleted.
 
 1. Delete a snapshot.
 
-    ```
+    ```sh
     $ manila snapshot-delete mysnapshot
     ```
 
 1. List snapshots after deleting.
 
-    ```
+    ```sh
     $ manila snapshot-list
 
     +----+----------+--------+------+------------+
@@ -415,13 +415,13 @@ The snapshot is deleted.
 ## Extend share
 1. Extend share.
 
-    ```
+    ```sh
     $ manila extend myshare 2
     ```
 
 Show the share while it is being extended.
 
-    ```
+    ```sh
     $ manila show myshare
     +-----------------------------+---------------------------------------------------------------+
     | Property                    | Value                                                         |
@@ -465,7 +465,7 @@ Show the share while it is being extended.
 
 1. Show the share after it is extended.
 
-    ```
+    ```sh
     $ manila show myshare
     +-----------------------------+---------------------------------------------------------------+
     | Property                    | Value                                                         |
@@ -510,13 +510,13 @@ Show the share while it is being extended.
 ## Shrink share
 1. Shrink a share.
 
-    ```
+    ```sh
     $ manila shrink myshare 1
     ```
 
 1. Show the share while it is being shrunk.
 
-    ```
+    ```sh
     $ manila show myshare
     +-----------------------------+---------------------------------------------------------------+
     | Property                    | Value                                                         |
@@ -560,7 +560,7 @@ Show the share while it is being extended.
 
 1. Show the share after it is being shrunk.
 
-    ```
+    ```sh
     $ manila show myshare
     +-----------------------------+---------------------------------------------------------------+
     | Property                    | Value                                                         |

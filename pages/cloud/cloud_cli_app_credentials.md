@@ -1,9 +1,9 @@
 ---
-title: Application credentials
+title: Managing application credentials
 tags: [cli,app_credentials]
 keywords: cli, application credentials
 last_updated: May 17, 2019
-summary: "ing application credentials"
+summary: "Creating and managing application credentials"
 sidebar: cloud_sidebar
 permalink: cloud_cli_app_credentials.html
 folder: cloud
@@ -17,114 +17,130 @@ See the Identity API reference for more information on authenticating with and m
 
 Create an application credential using python-keystoneclient:
 
-    $ openstack application credential create monitoring
-    +--------------+----------------------------------------------------------------------------------------+
-    | Field        | Value                                                                                  |
-    +--------------+----------------------------------------------------------------------------------------+
-    | description  | None                                                                                   |
-    | expires_at   | None                                                                                   |
-    | id           | 26bb287fd56a41f8a577c47f79221187                                                       |
-    | name         | monitoring                                                                             |
-    | project_id   | e99b6f4b9bf84a9da27e20c9cbfe887a                                                       |
-    | roles        | Member anotherrole                                                                     |
-    | secret       | PJXxBFGPOLwdl3PA6tSivJT9S4RpWhLcNZH2gXzCoxX1C2cnZsj2_Xmfw-LE7Wc-NwuJEYoHcG0gQ5bjWwe-bg |
-    | unrestricted | False                                                                                  |
-    +--------------+----------------------------------------------------------------------------------------+
+```sh
+$ openstack application credential create monitoring
++--------------+----------------------------------------------------------------------------------------+
+| Field        | Value                                                                                  |
++--------------+----------------------------------------------------------------------------------------+
+| description  | None                                                                                   |
+| expires_at   | None                                                                                   |
+| id           | 26bb287fd56a41f8a577c47f79221187                                                       |
+| name         | monitoring                                                                             |
+| project_id   | e99b6f4b9bf84a9da27e20c9cbfe887a                                                       |
+| roles        | Member anotherrole                                                                     |
+| secret       | PJXxBFGPOLwdl3PA6tSivJT9S4RpWhLcNZH2gXzCoxX1C2cnZsj2_Xmfw-LE7Wc-NwuJEYoHcG0gQ5bjWwe-bg |
+| unrestricted | False                                                                                  |
++--------------+----------------------------------------------------------------------------------------+
+```
 
 The only required parameter is a name. The application credential is created for the project to which the user is currently scoped with the same role assignments the user has on that project. Keystone will automatically generate a secret string that will be revealed once at creation time. You can also provide your own secret, if desired:
 
-    $ openstack application credential create monitoring --secret securesecret
-    +--------------+----------------------------------+
-    | Field        | Value                            |
-    +--------------+----------------------------------+
-    | description  | None                             |
-    | expires_at   | None                             |
-    | id           | bc257241e21747768c83fb9806af392d |
-    | name         | monitoring                       |
-    | project_id   | e99b6f4b9bf84a9da27e20c9cbfe887a |
-    | roles        | Member anotherrole               |
-    | secret       | securesecret                     |
-    | unrestricted | False                            |
-    +--------------+----------------------------------+
+```sh
+$ openstack application credential create monitoring --secret securesecret
++--------------+----------------------------------+
+| Field        | Value                            |
++--------------+----------------------------------+
+| description  | None                             |
+| expires_at   | None                             |
+| id           | bc257241e21747768c83fb9806af392d |
+| name         | monitoring                       |
+| project_id   | e99b6f4b9bf84a9da27e20c9cbfe887a |
+| roles        | Member anotherrole               |
+| secret       | securesecret                     |
+| unrestricted | False                            |
++--------------+----------------------------------+
+```
 
 The secret is hashed before it is stored, so the original secret is not retrievable after creation. If the secret is lost, a new application credential must be created.
 
 If none are provided, the application credential is created with the same role assignments on the project that the user has. You can find out what role assignments you have on a project by examining your token or your keystoneauth session:
 
-    >>> mysession.auth.auth_ref.role_names
-    [u'anotherrole', u'Member']
+```sh
+>>> mysession.auth.auth_ref.role_names
+[u'anotherrole', u'Member']
+```
 
 If you have more than one role assignment on a project, you can grant your application credential only a subset of your role assignments if desired. This is useful if you have administrator privileges on a project but only want the application to have basic membership privileges, or if you have basic membership privileges but want the application to only have read-only privileges. You cannot grant the application a role assignment that your user does not already have; for instance, if you are an admin on a project, and you want your application to have read-only access to the project, you must acquire a read-only role assignment on that project yourself before you can delegate it to the application credential. Removing a user’s role assignment on a project will invalidate the user’s application credentials for that project.
 
-    $ openstack application credential create monitoring --role Member
-    +--------------+----------------------------------------------------------------------------------------+
-    | Field        | Value                                                                                  |
-    +--------------+----------------------------------------------------------------------------------------+
-    | description  | None                                                                                   |
-    | expires_at   | None                                                                                   |
-    | id           | 5d04e42491a54e83b313aa2625709411                                                       |
-    | name         | monitoring                                                                             |
-    | project_id   | e99b6f4b9bf84a9da27e20c9cbfe887a                                                       |
-    | roles        | Member                                                                                 |
-    | secret       | vALEOMENxB_QaKFZOA2XOd7stwrhTlqPKrOdrXXM5BORss9u3O6GT-w_HYCPaZbtg96sDPCdtzVARZLpgUOY_g |
-    | unrestricted | False                                                                                  |
-    +--------------+----------------------------------------------------------------------------------------+
+```sh
+$ openstack application credential create monitoring --role Member
++--------------+----------------------------------------------------------------------------------------+
+| Field        | Value                                                                                  |
++--------------+----------------------------------------------------------------------------------------+
+| description  | None                                                                                   |
+| expires_at   | None                                                                                   |
+| id           | 5d04e42491a54e83b313aa2625709411                                                       |
+| name         | monitoring                                                                             |
+| project_id   | e99b6f4b9bf84a9da27e20c9cbfe887a                                                       |
+| roles        | Member                                                                                 |
+| secret       | vALEOMENxB_QaKFZOA2XOd7stwrhTlqPKrOdrXXM5BORss9u3O6GT-w_HYCPaZbtg96sDPCdtzVARZLpgUOY_g |
+| unrestricted | False                                                                                  |
++--------------+----------------------------------------------------------------------------------------+
+```
 
 You can provide an expiration date for application credentials:
 
-    $ openstack application credential create monitoring --expiration '2019-02-12T20:52:43'
-    +--------------+----------------------------------------------------------------------------------------+
-    | Field        | Value                                                                                  |
-    +--------------+----------------------------------------------------------------------------------------+
-    | description  | None                                                                                   |
-    | expires_at   | 2019-02-12T20:52:43.000000                                                             |
-    | id           | 4ea8c4a84f7b4c65a3d84460be9cd1f7                                                       |
-    | name         | monitoring                                                                             |
-    | project_id   | e99b6f4b9bf84a9da27e20c9cbfe887a                                                       |
-    | roles        | Member anotherrole                                                                     |
-    | secret       | _My16dlySn6jr7pGvBxjcMrmPA0MCpYlkKWs3gpY3-Ybk05yt2Hh83uMdTLPWlFeh8lOXajIAVHrQaBQ06iz5Q |
-    | unrestricted | False                                                                                  |
-    +--------------+----------------------------------------------------------------------------------------+
+```sh
+$ openstack application credential create monitoring --expiration '2019-02-12T20:52:43'
++--------------+----------------------------------------------------------------------------------------+
+| Field        | Value                                                                                  |
++--------------+----------------------------------------------------------------------------------------+
+| description  | None                                                                                   |
+| expires_at   | 2019-02-12T20:52:43.000000                                                             |
+| id           | 4ea8c4a84f7b4c65a3d84460be9cd1f7                                                       |
+| name         | monitoring                                                                             |
+| project_id   | e99b6f4b9bf84a9da27e20c9cbfe887a                                                       |
+| roles        | Member anotherrole                                                                     |
+| secret       | _My16dlySn6jr7pGvBxjcMrmPA0MCpYlkKWs3gpY3-Ybk05yt2Hh83uMdTLPWlFeh8lOXajIAVHrQaBQ06iz5Q |
+| unrestricted | False                                                                                  |
++--------------+----------------------------------------------------------------------------------------+
+```
 
 By default, application credentials are restricted from creating or deleting other application credentials and from creating or deleting trusts. If your application needs to be able to perform these actions and you accept the risks involved, you can disable this protection:
 
 {% include warning.html content="Restrictions on these Identity operations are deliberately imposed as a safeguard to prevent a compromised application credential from regenerating itself. Disabling this restriction poses an inherent added risk." %}
 
-    $ openstack application credential create monitoring --unrestricted
-    +--------------+----------------------------------------------------------------------------------------+
-    | Field        | Value                                                                                  |
-    +--------------+----------------------------------------------------------------------------------------+
-    | descriptibling this restriction poses an inherent added risk.
+```sh
+$ openstack application credential create monitoring --unrestricted
++--------------+----------------------------------------------------------------------------------------+
+| Field        | Value                                                                                  |
++--------------+----------------------------------------------------------------------------------------+
+| descriptibling this restriction poses an inherent added risk.
 
-    $ openstack application credential create monitoring --unrestricted
-    +--------------+----------------------------------------------------------------------------------------+
-    | Field        | Value                                                                                  |
-    +--------------+----------------------------------------------------------------------------------------+
-    | descriptibling this restriction poses an inherent added risk.
+$ openstack application credential create monitoring --unrestricted
++--------------+----------------------------------------------------------------------------------------+
+| Field        | Value                                                                                  |
++--------------+----------------------------------------------------------------------------------------+
+| descriptibling this restriction poses an inherent added risk.
 
-    $ openstack application credential create monitoring --unrestricte                                                    |
-    | secret       | ArOy6DYcLeLTRlTmfvF1TH1QmRzYbmD91cbVPOHL3ckyRaLXlaq5pTGJqvCvqg6leEvTI1SQeX3QK-3iwmdPxg |
-    | unrestricted | True                                                                                   |
-    +--------------+----------------------------------------------------------------------------------------+
+$ openstack application credential create monitoring --unrestricte                                                    |
+| secret       | ArOy6DYcLeLTRlTmfvF1TH1QmRzYbmD91cbVPOHL3ckyRaLXlaq5pTGJqvCvqg6leEvTI1SQeX3QK-3iwmdPxg |
+| unrestricted | True                                                                                   |
++--------------+----------------------------------------------------------------------------------------+
+```
 
 ## Using Application Credentials
 Applications can authenticate using the application_credential auth method. For a service using keystonemiddleware to authenticate with keystone, the auth section would look like this:
 
-    [keystone_authtoken]
-    auth_url = https://au-east-api.cloudcentral.com.au:5000/v3
-    auth_type = v3applicationcredential
-    application_credential_id = 6cb5fa6a13184e6fab65ba2108adf50c
-    application_credential_secret= glance_secret
+```
+[keystone_authtoken]
+auth_url = https://au-east-api.cloudcentral.com.au:5000/v3
+auth_type = v3applicationcredential
+application_credential_id = 6cb5fa6a13184e6fab65ba2108adf50c
+application_credential_secret= glance_secret
+```
 
 You can also identify your application credential with its name and the name or ID of its owner. For example:
 
-    [keystone_authtoken]
-    auth_url = https://au-east-api.cloudcentral.com.au:5000/v3
-    auth_type = v3applicationcredential
-    username = glance
-    user_domain_name = Default
-    application_credential_name = glance_cred
-    application_credential_secret = glance_secret
+```
+[keystone_authtoken]
+auth_url = https://au-east-api.cloudcentral.com.au:5000/v3
+auth_type = v3applicationcredential
+username = glance
+user_domain_name = Default
+application_credential_name = glance_cred
+application_credential_secret = glance_secret
+```
 
 ## Rotating Application Credentials
 A user can create multiple application credentials with the same role assignments on the same project. This allows the application credential to be gracefully rotated with minimal or no downtime for your application. In contrast, changing a service user’s password results in immediate downtime for any application using that password until the application can be updated with the new password.

@@ -12,7 +12,7 @@ folder: cloud
 Change the size of a server by changing its flavor.
 
 1. Show information about your server, including its size, which is shown as the value of the flavor property:
-   ```
+   ```sh
    $ openstack server show myCirrosServer
    +--------------------------------------+----------------------------------------------------------+
    | Field                                | Value                                                    |
@@ -51,7 +51,7 @@ Change the size of a server by changing its flavor.
    The size (flavor) of the server is m1.small (2).
 
 1. List the available flavors with the following command:
-   ```
+   ```sh
    $ openstack flavor list
    +-----+-----------+-------+------+-----------+-------+-----------+
    | ID  | Name      |   RAM | Disk | Ephemeral | VCPUs | Is_Public |
@@ -64,7 +64,7 @@ Change the size of a server by changing its flavor.
    +-----+-----------+-------+------+-----------+-------+-----------+
    ```
 1. To resize the server, use the nova resize command and add the server ID or name and the new flavor. Include the --poll parameter to display the resize progress. For example:
-   ```
+   ```sh
    $ nova resize myCirrosServer 4 --poll
 
    Instance resizing... 100% complete
@@ -73,7 +73,7 @@ Change the size of a server by changing its flavor.
    {% include note.html content="By default, the nova resize command gives the guest operating system a chance to perform a controlled shutdown before the instance is powered off and the instance is resized. The shutdown behavior is configured by the shutdown_timeout parameter that can be set in the nova.conf file. Its value stands for the overall period (in seconds) a guest operation system is allowed to complete the shutdown. The default timeout is 60 seconds. See Description of Compute configuration options for details.<br/><br/>The timeout value can be overridden on a per image basis by means of os_shutdown_timeout that is an image metadata setting allowing different types of operating systems to specify how much time they need to shut down cleanly." %}
 
 1. Show the status for your server.
-```
+```sh
 $ openstack server list
 +----------------------+----------------+--------+-----------------------------------------+
 | ID                   | Name           | Status | Networks                                |
@@ -84,13 +84,13 @@ $ openstack server list
 When the resize completes, the status becomes VERIFY_RESIZE.
 
 1. Confirm the resize,for example:
-   ```
+   ```sh
    $ openstack server resize --confirm 67bc9a9a-5928-47c4-852c-3631fef2a7e8
    ```
    The server status becomes ACTIVE.
 
 1. If the resize fails or does not work as expected, you can revert the resize. For example:
-   ```
+   ```sh
    $ openstack server resize --revert 67bc9a9a-5928-47c4-852c-3631fef2a7e8
    ```
    The server status becomes ACTIVE.

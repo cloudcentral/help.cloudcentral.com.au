@@ -1,9 +1,9 @@
 ---
-title: Install the CLI
+title: Installing the CLI tools
 tags: [cli,getting_started]
 keywords: cli
 last_updated: April 11, 2018
-summary: "How to install the CLI"
+summary: "How to install the Openstack CLI tools on various operating systems"
 sidebar: cloud_sidebar
 permalink: cloud_cli_install.html
 folder: cloud
@@ -26,11 +26,11 @@ If you need to install the source package for the command-line package, the foll
 
 ## Install the OpenStack client
 The following example shows the command for installing the OpenStack client with pip, which supports multiple services.
-```
+```sh
 # pip install python-openstackclient
 ```
 The following individual clients are deprecated in favor of a common client. Instead of installing and learning all these clients, we recommend installing and using the OpenStack client. You may need to install an individual project’s client because coverage is not yet sufficient in the OpenStack client. If you need to install an individual client’s project, replace the ```PROJECT``` name in this pip install command using the list below.
-```
+```sh
 # pip install python-PROJECTclient
 ```
 * ```barbican``` - Key Manager Service API
@@ -46,11 +46,11 @@ Use pip to install the OpenStack clients on a Linux, Mac OS X, or Microsoft Wind
 Install each client separately by using the following command:
 
 For Mac OS X or Linux:
-```
+```sh
 # pip install python-PROJECTclient
 ```
 For Microsoft Windows:
-```
+```sh
 C:\>pip install python-PROJECTclient
 ```
 
@@ -58,32 +58,32 @@ C:\>pip install python-PROJECTclient
 RDO, openSUSE, SUSE Linux Enterprise, Debian, and Ubuntu have client packages that can be installed without pip.
 
 On Red Hat Enterprise Linux, CentOS, or Fedora, use yum to install the clients from the packaged versions available in RDO:
-```
+```sh
 # yum install python-PROJECTclient
 ```
 For Ubuntu or Debian, use apt-get to install the clients from the packaged versions:
-```
+```sh
 # apt-get install python-PROJECTclient
 ```
 For openSUSE, use zypper to install the clients from the distribution packages service:
-```
+```sh
 # zypper install python-PROJECTclient
 ```
 For SUSE Linux Enterprise Server, use zypper to install the clients from the distribution packages in the Open Build Service. First, add the Open Build Service repository:
-```
+```sh
 # zypper addrepo -f obs://Cloud:OpenStack:Mitaka/SLE_12_SP1 Mitaka
 ```
 Then you can install the packages:
-```
+```sh
 # zypper install python-PROJECTclient
 ```
 ## Upgrade or remove clients
 To upgrade a client, add the --upgrade option to the pip install command:
-```
+```sh
 # pip install --upgrade python-PROJECTclient
 ```
 To remove the client, run the pip uninstall command:
-```
+```sh
 # pip uninstall python-PROJECTclient
 ```
 

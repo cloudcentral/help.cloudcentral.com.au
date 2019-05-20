@@ -32,9 +32,9 @@ Before you begin, source the OpenStack RC file.
 
 1. List the available flavors.
 
-   ```
+   ```sh
    $ openstack flavor list
-   Note the ID of the flavor that you want to use for your instance:
+   # Note the ID of the flavor that you want to use for your instance:
 
    +-----+-----------+-------+------+-----------+-------+-----------+
    | ID  | Name      |   RAM | Disk | Ephemeral | VCPUs | Is_Public |
@@ -50,13 +50,13 @@ Before you begin, source the OpenStack RC file.
 
 1. List the available images.
 
-   ```
+   ```sh
    $ openstack image list
    ```
 
    Note the ID of the image from which you want to boot your instance:
 
-   ```
+   ```sh
    +--------------------------------------+---------------------------------+--------+
    | ID                                   | Name                            | Status |
    +--------------------------------------+---------------------------------+--------+
@@ -68,7 +68,7 @@ Before you begin, source the OpenStack RC file.
 
    You can also filter the image list by using grep to find a specific image, as follows:
 
-   ```
+   ```sh
    $ openstack image list | grep 'kernel'
 
    | df430cc2-3406-4061-b635-a51c16e488ac | cirros-0.3.5-x86_64-uec-kernel  | active |
@@ -76,7 +76,7 @@ Before you begin, source the OpenStack RC file.
 
 1. List the available security groups.
 
-   ```
+   ```sh
    $ openstack security group list
    ```
 
@@ -84,7 +84,7 @@ Before you begin, source the OpenStack RC file.
 
    Note the ID of the security group that you want to use for your instance:
 
-   ```
+   ```sh
    +--------------------------------------+---------+------------------------+----------------------------------+
    | ID                                   | Name    | Description            | Project                          |
    +--------------------------------------+---------+------------------------+----------------------------------+
@@ -97,13 +97,13 @@ Before you begin, source the OpenStack RC file.
 
    You can view rules for a specified security group:
 
-   ```
+   ```sh
    $ openstack security group rule list default
    ```
 
 1. List the available key pairs, and note the key pair name that you use for SSH access.
 
-   ```
+   ```sh
    $ openstack keypair list
    ```
 

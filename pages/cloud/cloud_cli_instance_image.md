@@ -13,7 +13,7 @@ Follow the steps below to launch an instance from an image.
 
 1. After you gather required parameters, run the following command to launch an instance. Specify the server name, flavor ID, and image ID.
 
-   ```
+   ```sh
    $ nova boot --flavor FLAVOR_ID --image IMAGE_ID --key-name KEY_NAME \
      --user-data USER_DATA_FILE --security-groups SEC_GROUP_NAME --meta KEY=VALUE \
      INSTANCE_NAME
@@ -27,13 +27,13 @@ Follow the steps below to launch an instance from an image.
 
    The following command launches the MyCirrosServer instance with the m1.small flavor (ID of 1), cirros-0.3.2-x86_64-uec image (ID of 397e713c-b95b-4186-ad46-6126863ea0a9), default security group, KeyPair01 key, and a user data file called cloudinit.file:
 
-   ```
+   ```sh
    $ nova boot --flavor 1 --image 397e713c-b95b-4186-ad46-6126863ea0a9 \
      --security-groups default --key-name KeyPair01 --user-data cloudinit.file \
      myCirrosServer
    ```
    Depending on the parameters that you provide, the command returns a list of server properties.
-   ```
+   ```sh
    +-------------------------------------+-------------------------------------+
    | Property                            | Value                               |
    +-------------------------------------+-------------------------------------+
@@ -76,16 +76,16 @@ Follow the steps below to launch an instance from an image.
 
    {% include note.html content="You can also place arbitrary local files into the instance file system at creation time by using the --file <dst-path=src-path> option. You can store up to five files. For example, if you have a special authorized keys file named special_authorized_keysfile that you want to put on the instance rather than using the regular SSH key injection, you can use the --file option as shown in the following example." %}
 
-   ```
+   ```sh
    $ nova boot --image ubuntu-cloudimage --flavor 1 vm-name \
      --file /root/.ssh/authorized_keys=special_authorized_keysfile
    ```
    Check if the instance is online.
-   ```
+   ```sh
    $ nova list
    ```
    The list shows the ID, name, status, and private (and if assigned, public) IP addresses for all instances in the project to which you belong:
-   ```
+   ```sh
    +-------------+----------------------+--------+------------+-------------+------------------+
    | ID          | Name                 | Status | Task State | Power State | Networks         |
    +-------------+----------------------+--------+------------+-------------+------------------+
@@ -96,7 +96,7 @@ Follow the steps below to launch an instance from an image.
    If the status for the instance is ACTIVE, the instance is online.
 
 1. To view the available options for the nova list command, run the following command:
-   ```
+   ```sh
    $ nova help list
    ```
    {% include note.html content="If you did not provide a key pair, security groups, or rules, you can access the instance only from inside the cloud through VNC. Even pinging the instance is not possible." %}

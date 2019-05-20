@@ -1,5 +1,5 @@
 ---
-title: Access and instanes console using the CLI
+title: Access an instances console using the CLI
 tags: [cli, instance, console]
 keywords: cli, instance, console
 last_updated: April 11, 2018
@@ -25,11 +25,11 @@ There are three remote console access methods commonly used with OpenStack:
 Example:
 
 To access an instance through a remote console, run the following command:
-```
+```sh
 $ openstack console url show INSTANCE_NAME --xvpvnc
 ```
 The command returns a URL from which you can access your instance:
-```
+```sh
 +--------+------------------------------------------------------------------------------+
 | Type   | Url                                                                          |
 +--------+------------------------------------------------------------------------------+

@@ -26,37 +26,37 @@ Networking in OpenStack is complex. This section provides the basic instructions
 
    - Network tab
 
-     - Network Name: Specify a name to identify the network.
+     - **Network Name**: Specify a name to identify the network.
 
-     - Shared: Share the network with other projects. Non admin users are not allowed to set shared option.
+     - **Shared**: Share the network with other projects. Non admin users are not allowed to set shared option.
 
-     - Admin State: The state to start the network in.
+     - **Admin State**: The state to start the network in.
 
-     - Create Subnet: Select this check box to create a subnet
+     - **Create Subnet**: Select this check box to create a subnet
 
        You do not have to specify a subnet when you create a network, but if you do not specify a subnet, the network can not be attached to an instance.
 
    - Subnet tab
 
-     - Subnet Name: Specify a name for the subnet.
+     - **Subnet Name**: Specify a name for the subnet.
 
-     - Network Address: Specify the IP address for the subnet.
+     - **Network Address**: Specify the IP address for the subnet.
 
-     - IP Version: Select IPv4 or IPv6.
+     - **IP Version**: Select IPv4 or IPv6.
 
-     - Gateway IP: Specify an IP address for a specific gateway. This parameter is optional.
+     - **Gateway IP**: Specify an IP address for a specific gateway. This parameter is optional.
 
-     - Disable Gateway: Select this check box to disable a gateway IP address.
+     - **Disable Gateway**: Select this check box to disable a gateway IP address.
 
    - Subnet Details tab
 
-     - Enable DHCP: Select this check box to enable DHCP.
+     - **Enable DHCP**: Select this check box to enable DHCP.
 
-     - Allocation Pools: Specify IP address pools.
+     - **Allocation Pools**: Specify IP address pools.
 
-     - DNS Name Servers: Specify a name for the DNS server.
+     - **DNS Name Servers**: Specify a name for the DNS server.
 
-     - Host Routes: Specify the IP address of host routes.
+     - **Host Routes**: Specify the IP address of host routes.
 
 1. Click Create.
 
@@ -105,15 +105,15 @@ You have successfully created the router. You can view the new topology from the
 
 1. In the Create Port dialog box, specify the following values.
 
-   Name: Specify name to identify the port.
+   **Name**: Specify name to identify the port.
 
-   Device ID: Device ID attached to the port.
+   **Device ID**: Device ID attached to the port.
 
-   Device Owner: Device owner attached to the port.
+   **Device Owner**: Device owner attached to the port.
 
-   Binding Host: The ID of the host where the port is allocated.
+   **Binding Host**: The ID of the host where the port is allocated.
 
-   Binding VNIC Type: Select the VNIC type that is bound to the neutron port.
+   **Binding VNIC Type**: Select the VNIC type that is bound to the neutron port.
 
 1. Click Create Port.
 

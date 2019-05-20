@@ -12,7 +12,7 @@ folder: cloud
 When you no longer need an instance, you can delete it.
 
 1. List all instances:
-   ```
+   ```sh
    $ nova list
    +-------------+----------------------+--------+------------+-------------+------------------+
    | ID          | Name                 | Status | Task State | Power State | Networks         |
@@ -23,13 +23,13 @@ When you no longer need an instance, you can delete it.
    +-------------+----------------------+--------+------------+-------------+------------------+
    ```
 1. Run the nova delete command to delete the instance. The following example shows deletion of the newServer instance, which is in ERROR state:
-   ```
+   ```sh
    $ nova delete newServer
    ```
    The command does not notify that your server was deleted.
 
 1. To verify that the server was deleted, run the nova list command:
-   ```
+   ```sh
    $ nova list
    +-------------+----------------------+--------+------------+-------------+------------------+
    | ID          | Name                 | Status | Task State | Power State | Networks         |

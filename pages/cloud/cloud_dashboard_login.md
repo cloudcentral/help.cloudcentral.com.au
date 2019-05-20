@@ -19,10 +19,10 @@ You can use the dashboard to manage your resources in all regions.
 
 At the login page, enter the following information which has been provided
 
-* ```Domain```: Enter your accounts domain
-* ```Username```: Enter your username
-* ```Password```: Enters your password
-* ```Region```: Select the regions you would like to authenticate against
+* **Domain**: Enter your accounts domain
+* **Username**: Enter your username
+* **Password**: Enters your password
+* **Region**: Select the regions you would like to authenticate against
 
 The top of the window displays your user name. You can also access the Settings tab (OpenStack dashboard — Settings tab) or sign out of the dashboard.
 

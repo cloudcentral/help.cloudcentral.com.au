@@ -22,22 +22,22 @@ Volumes are block storage devices that you attach to instances to enable persist
 
 1. In the dialog box that opens, enter or select the following values.
 
-   - Volume Name: Specify a name for the volume.
+   - **Volume Name**: Specify a name for the volume.
 
-   - Description: Optionally, provide a brief description for the volume.
+   - **Description**: Optionally, provide a brief description for the volume.
 
-   - Volume Source: Select one of the following options:
+   - **Volume Source**: Select one of the following options:
 
-     - No source, empty volume: Creates an empty volume. An empty volume does not contain a file system or a partition table.
-     - Snapshot: If you choose this option, a new field for Use snapshot as a source displays. You can select the snapshot from the list.
-     - Image: If you choose this option, a new field for Use image as a source displays. You can select the image from the list.
-     - Volume: If you choose this option, a new field for Use volume as a source displays. You can select the volume from the list. Options to use a snapshot or a volume as the source for a volume are displayed only if there are existing snapshots or volumes.
+     - **No source, empty volume**: Creates an empty volume. An empty volume does not contain a file system or a partition table.
+     - **Snapshot**: If you choose this option, a new field for Use snapshot as a source displays. You can select the snapshot from the list.
+     - **Image**: If you choose this option, a new field for Use image as a source displays. You can select the image from the list.
+     - **Volume**: If you choose this option, a new field for Use volume as a source displays. You can select the volume from the list. Options to use a snapshot or a volume as the source for a volume are displayed only if there are existing snapshots or volumes.
 
-   - Type: Leave this field blank.
+   - **Type**: Leave this field blank.
 
-   - Size (GB): The size of the volume in gibibytes (GiB).
+   - **Size (GB)**: The size of the volume in gibibytes (GiB).
 
-   - Availability Zone: Select the Availability Zone from the list. By default, this value is set to the availability zone given by the cloud provider (for example, us-west or apac-south). For some cases, it could be nova.
+   - **Availability Zone**: Select the Availability Zone from the list. By default, this value is set to the availability zone given by the cloud provider (for example, us-west or apac-south). For some cases, it could be nova.
 
 1. Click Create Volume.
 

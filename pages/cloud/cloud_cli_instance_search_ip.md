@@ -10,11 +10,11 @@ folder: cloud
 ---
 
 You can search for an instance using the IP address parameter, --ip, with the nova list command.
-```
+```sh
 $ nova list --ip IP_ADDRESS
 ```
 The following example shows the results of a search on 10.0.0.4.
-```
+```sh
 $ nova list --ip 10.0.0.4
 +------------------+----------------------+--------+------------+-------------+------------------+
 | ID               | Name                 | Status | Task State | Power State | Networks         |

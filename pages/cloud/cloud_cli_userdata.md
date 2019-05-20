@@ -13,6 +13,6 @@ A user data file is a special key in the metadata service that holds a file that
 
 You can place user data in a local file and pass it through the --user-data ```user-data-file``` parameter at instance creation.
 
-```
+```sh
 $ nova boot --image ubuntu-cloudimage --flavor 1 --user-data mydata.file
 ```

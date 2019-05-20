@@ -13,7 +13,7 @@ Before you run commands, set environment variables using the [OpenStack RC file.
 
 ## Create networks
 1. List the extensions of the system:
-   ```
+   ```sh
    $ neutron ext-list -c alias -c name
    +-----------------+--------------------------+
    | alias           | name                     |
@@ -29,7 +29,7 @@ Before you run commands, set environment variables using the [OpenStack RC file.
    +-----------------+--------------------------+
    ```
 1. Create a network:
-   ```
+   ```sh
    $ neutron net-create net1
    Created a new network:
    +---------------------------+--------------------------------------+
@@ -52,7 +52,7 @@ Before you run commands, set environment variables using the [OpenStack RC file.
    {% include note.html content="Some fields of the created network are invisible to non-admin users." %}
 
 1. Create a network with specified provider network type.
-   ```
+   ```sh
    $ neutron net-create net2 --provider:network-type local
    Created a new network:
    +---------------------------+--------------------------------------+
@@ -75,7 +75,7 @@ Before you run commands, set environment variables using the [OpenStack RC file.
 
 ## Create subnets
 Create a subnet:
-```
+```sh
 $ neutron subnet-create net1 192.168.2.0/24 --name subnet1
 Created a new subnet:
 +------------------+--------------------------------------------------+
@@ -112,7 +112,7 @@ For information and examples on more advanced use of neutron’s subnet subcomma
 
 ## Create routers
 1. Create a router:
-   ```
+   ```sh
    $ neutron router-create router1
    Created a new router:
    +-----------------------+--------------------------------------+
@@ -129,20 +129,20 @@ For information and examples on more advanced use of neutron’s subnet subcomma
    Take note of the unique router identifier returned, this will be required in subsequent steps.
 
 1. Link the router to the external provider network:
-   ```
+   ```sh
    $ neutron router-gateway-set ROUTER NETWORK
    ```
    Replace ROUTER with the unique identifier of the router, replace NETWORK with the unique identifier of the external provider network.
 
 1. Link the router to the subnet:
-   ```
+   ```sh
    $ neutron router-interface-add ROUTER SUBNET
    ```
    Replace ROUTER with the unique identifier of the router, replace SUBNET with the unique identifier of the subnet.
 
 ## Create ports
 1. Create a port with specified IP address:
-   ```
+   ```sh
    $ neutron port-create net1 --fixed-ip ip_address=192.168.2.40
    Created a new port:
    +----------------------+----------------------------------------------------------------------+
@@ -167,7 +167,7 @@ For information and examples on more advanced use of neutron’s subnet subcomma
    {% include note.html content="When creating a port, you can specify any unallocated IP in the subnet even if the address is not in a pre-defined pool of allocated IP addresses (set by your cloud provider)." %}
 
 1. Create a port without specified IP address:
-   ```
+   ```sh
    $ neutron port-create net1
    Created a new port:
    +----------------------+----------------------------------------------------------------------+
@@ -192,7 +192,7 @@ For information and examples on more advanced use of neutron’s subnet subcomma
    {% include note.html content="You can specify a MAC address with --mac-address MAC_ADDRESS. If you specify an invalid MAC address, including 00:00:00:00:00:00 or ff:ff:ff:ff:ff:ff, you will get an error." %}
 
 1. Query ports with specified fixed IP addresses:
-   ```
+   ```sh
    $ neutron port-list --fixed-ips ip_address=192.168.2.2 \
      ip_address=192.168.2.40
    +----------------+------+-------------------+-------------------------------------------------+
@@ -203,8 +203,5 @@ For information and examples on more advanced use of neutron’s subnet subcomma
    +----------------+------+-------------------+-------------------------------------------------+
    --fixed-ips ip_address=192.168.2.2 ip_address=192.168.2.40 is one unknown option.
    ```
-
-## How to find unknown options
-The unknown options can be easily found by watching the output of create_xxx or show_xxx command. For example, in the port creation command, we see the fixed_ips fields, which can be used as an unknown option.
 
 {% include links.html %}

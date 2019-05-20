@@ -18,72 +18,21 @@ entries:
       url: /cloud_getting_started.html
       output: web
 
-  - title: Services
-    output: web
-    folderitems:
-
-    - title: Identity
-      url: /cloud_identity.html
-      output: web
-
-    - title: Images
-      url: /cloud_images.html
-      output: web
-
-    - title: Compute
-      url: /cloud_compute.html
-      output: web
-
-    - title: Network
-      url: /cloud_network.html
-      output: web
-
-    - title: Volume Storage
-      url: /cloud_volume_storage.html
-      output: web
-
-    - title: Object Storage
-      url: /cloud_object_storage.html
-      output: web
-
-    - title: Load balancers
-      url: /cloud_loadbalancers.html
-      output: web
-
-    - title: VPNs
-      url: /cloud_vpns.html
-      output: web
-
-    - title: DNS
-      url: /cloud_dns.html
-      output: web
-
-    - title: Shares
-      url: /cloud_shares.html
-      output: web
-
-    - title: Orchestration
-      url: /cloud_orchestration.html
-      output: web
-
-    - title: Container infrastructure
-      url: /cloud_container_infrastructure.html
-      output: web
-
-
   - title: Using the Dashboard
     output: web
     folderitems:
-
-    - title: Overview
+    - title: Accessing the Dashboard
       url: /cloud_dashboard_overview.html
       output: web
+
+
     - title: Logging in
       url: /cloud_dashboard_login.html
       output: web
     - title: Managing security
       url: /cloud_dashboard_security.html
       output: web
+
     - title: Managing images
       url: /cloud_dashboard_images.html
       output: web
@@ -218,20 +167,57 @@ entries:
       url: /cloud_cli_vpns.html
       output: web
 
-    - title: Managing Load balancers
-      url: /cloud_cli_loadbalancers.html
-      output: web
+      subfolders:
+      - title: Managing Load balancers
+        output: web
+        subfolderitems:
+
+        - title: Create and manage load balancers
+          url: /cloud_cli_loadbalancers.html
+          output: web
+
+        - title: Managing Load balancers Layer7 policy
+          url: /cloud_cli_loadbalancers_layer7.html
+          output: web
 
     - title: Managing Shares
       url: /cloud_cli_shares.html
       output: web
 
+  - title: Frequently asked Questions
+    output: web
+    folderitems:
+    - title: General
+      url: /cloud_faq_general.html
+      output: web
+    - title: API
+      url: /cloud_faq_api.html
+      output: web
+    - title: Images
+      url: /cloud_faq_images.html
+      output: web
+    - title: Networking
+      url: /cloud_faq_networking.html
+      output: web
+    - title: Security Groups
+      url: /cloud_faq_securitygroups.html
+      output: web
+    - title: Volumes
+      url: /cloud_faq_volumes.html
+      output: web
+    - title: Servers
+      url: /cloud_faq_servers.html
+      output: web
+    - title: Object Storage
+      url: /cloud_faq_object_storage.html
+      output: web
+    - title: Dashboard
+      url: /cloud_faq_dashboard.html
+      output: web
+
   - title: More information
     output: web
     folderitems:
-    - title: FAQ
-      url: /cloud_faq.html
-      output: web
 
     - title: Glossary
       url: /cloud_glossary.html
