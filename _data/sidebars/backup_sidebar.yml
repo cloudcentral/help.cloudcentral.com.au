@@ -1,0 +1,32 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  #product: Backup & Recovery
+  #version: 1.0
+  folders:
+
+  - title: Overview
+    output: web
+    folderitems:
+    - title: Home
+      url: /backup_home.html
+      output: web
+
+    - title: FAQ
+      url: /backup_faq.html
+      output: web
+
+    - title: Glossary
+      url: /backup_glossary.html
+      output: web
+
+    - title: Knowledge Base
+      url: /backup_kb.html
+      output: web
+
+    - title: Getting started
+      url: /backup_getting_started.html
+      output: web
+

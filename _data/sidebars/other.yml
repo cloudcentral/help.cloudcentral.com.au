@@ -5,14 +5,92 @@ entries:
 - title: other
   folders:
 
-  - title: Other Links
-    folderitems:
+   - title: Other Links
+     folderitems:
 
-    - title: Automated links bookmark
-      url: /mydoc_hyperlinks.html#automatedlinks
+     - title: Automated links bookmark
+       url: /cloud_hyperlinks.html#automatedlinks
 
-    - title: Bookmark links
-      url: /mydoc_hyperlinks.html#bookmarklinks
+     - title: Bookmark links
+       url: /cloud_hyperlinks.html#bookmarklinks
 
-    - title: Some link bookmark
-      url: /mydoc_pages.html#someIdTag
+     - title: Some link bookmark
+       url: /cloud_pages.html#someIdTag
+
+     - title: Installing CLI from packages
+       url: /cloud_cli_install.html#packages
+
+     - title: Boot instance from image and attach non-bootable volume
+       url: /cloud_cli_instance_volume.html#boot
+
+     - title: Create volume from image and boot instance
+       url: /cloud_cli_instance_volume.html#image
+
+     - title: Attach swap or ephemeral disk to an instance
+       url: /cloud_cli_instance_volume.html#ephemeral
+     - title: Boot an instance from an ISO image
+       url: /cloud_cli_instance_iso.html#boot
+
+     - title: Make the instances booted from ISO image functional
+       url: /cloud_cli_instance_iso.html#functional
+
+     - title: List floating IP address information
+       url: /cloud_cli_instance_ip.html#list_floating_ip
+
+     - title: Associate floating IP address information
+       url: /cloud_cli_instance_ip.html#associate_floating_ip
+
+     - title: Disassociate floating IP address information
+       url: /cloud_cli_instance_ip.html#disassociate_floating_ip
+
+     - title: Pausing and unpausing an instance
+       url: /cloud_cli_instance_restart.html#pausing
+
+     - title: Suspending and resuming an instance
+       url: /cloud_cli_instance_restart.html#suspending
+
+     - title: Shelving and unshelving an instance
+       url: /cloud_cli_instance_restart.html#shelving
+
+     - title: Project tab
+       url: /cloud_dashboard_login.html#project-tab
+
+     - title: Admin tab
+       url: /cloud_dashboard_login.html#admin-tab
+
+     - title: Identity tab
+       url: /cloud_dashboard_login.html#identity-tab
+
+     - title: Settings tab
+       url: /cloud_dashboard_login.html#settings-tab
+
+     - title: Add rule
+       url: /cloud_dashboard_security.html#addrule
+
+     - title: Add key pair
+       url: /cloud_dashboard_security.html#add-a-key-pair
+
+     - title: Import key pair
+       url: /cloud_dashboard_security.html#import-a-key-pair
+
+     - title: Allocate ip
+       url: /cloud_dashboard_security.html#allocate-a-floating-ip-address-to-an-instance
+
+     - title: SSH to instance
+       url: /cloud_dashboard_instances.html#connect-to-your-instance-by-using-ssh
+
+     - title: Track usage
+       url: /cloud_dashboard_instances.html#track-usage-for-instances
+
+     - title: Create snapshot
+       url: /cloud_dashboard_instances.html#snapshot-an-instance
+
+
+     - title: Manage instance
+       url: /cloud_dashboard_instances.html#manage-an-instance
+
+
+
+     - title: Launch instance
+       url: /cloud_dashboard_instances.html#launch-an-instance
+

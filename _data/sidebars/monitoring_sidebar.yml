@@ -1,0 +1,32 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  #product: Monitoring
+  #version: 1.0
+  folders:
+
+  - title: Getting Started
+    output: web
+    folderitems:
+    - title: Home
+      url: /monitoring_home.html
+      output: web
+
+    - title: FAQ
+      url: /monitoring_faq.html
+      output: web
+
+    - title: Glossary
+      url: /monitoring_glossary.html
+      output: web
+
+    - title: Knowledge Base
+      url: /monitoring_kb.html
+      output: web
+
+    - title: Getting started
+      url: /monitoring_getting_started.html
+      output: web
+

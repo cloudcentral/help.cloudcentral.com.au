@@ -1,0 +1,241 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  #product: Cloud Platform
+  #version: 1.0
+  folders:
+
+  - title: Cloud Platform
+    output: web
+    folderitems:
+    - title: Home
+      url: /cloud_home.html
+      output: web
+
+    - title: Getting started
+      url: /cloud_getting_started.html
+      output: web
+
+  - title: Services
+    output: web
+    folderitems:
+
+    - title: Identity
+      url: /cloud_identity.html
+      output: web
+
+    - title: Images
+      url: /cloud_images.html
+      output: web
+
+    - title: Compute
+      url: /cloud_compute.html
+      output: web
+
+    - title: Network
+      url: /cloud_network.html
+      output: web
+
+    - title: Volume Storage
+      url: /cloud_volume_storage.html
+      output: web
+
+    - title: Object Storage
+      url: /cloud_object_storage.html
+      output: web
+
+    - title: Load balancers
+      url: /cloud_loadbalancers.html
+      output: web
+
+    - title: VPNs
+      url: /cloud_vpns.html
+      output: web
+
+    - title: DNS
+      url: /cloud_dns.html
+      output: web
+
+    - title: Shares
+      url: /cloud_shares.html
+      output: web
+
+    - title: Orchestration
+      url: /cloud_orchestration.html
+      output: web
+
+    - title: Container infrastructure
+      url: /cloud_container_infrastructure.html
+      output: web
+
+
+  - title: Using the Dashboard
+    output: web
+    folderitems:
+
+    - title: Overview
+      url: /cloud_dashboard_overview.html
+      output: web
+    - title: Logging in
+      url: /cloud_dashboard_login.html
+      output: web
+    - title: Managing security
+      url: /cloud_dashboard_security.html
+      output: web
+    - title: Managing instances
+      url: /cloud_dashboard_instances.html
+      output: web
+    - title: Managing networks
+      url: /cloud_dashboard_networks.html
+      output: web
+    - title: Managing volume storage
+      url: /cloud_dashboard_volumes.html
+      output: web
+    - title: Managing object containers
+      url: /cloud_dashboard_object_containers.html
+      output: web
+    - title: Managing Load Balancers
+      url: /cloud_dashboard_loadbalancers.html
+      output: web
+    - title: Managing VPNs
+      url: /cloud_dashboard_vpns.html
+      output: web
+    - title: Managing Shares
+      url: /cloud_dashboard_shares.html
+      output: web
+
+
+
+  - title: Using the CLI
+    output: web
+    folderitems:
+
+    - title: Overview
+      url: /cloud_cli_overview.html
+      output: web
+    - title: Installation
+      url: /cloud_cli_install.html
+      output: web
+
+    - title: Configuration
+      url: /cloud_cli_config.html
+      output: web
+
+    - title: Application credentials
+      url: /cloud_cli_app_credentials.html
+      output: web
+
+
+#    - title: Managing images
+#      url: /cloud_cli_images.html
+#      output: web
+
+    - title: Managing security
+      url: /cloud_cli_security.html
+      output: web
+
+    - title: Managing networks
+      url: /cloud_cli_networks.html
+      output: web
+
+      subfolders:
+      - title: Launching instances
+        output: web
+        subfolderitems:
+
+          - title: Overview
+            url: /cloud_cli_instances.html
+            output: web
+
+          - title: Create an instance from an image
+            url: /cloud_cli_instance_image.html
+            output: web
+
+          - title: Create an instance from a volume
+            url: /cloud_cli_instance_volume.html
+            output: web
+
+          #- title: Launch an instance using ISO image
+          #  url: /cloud_cli_instance_iso.html
+          #  output: web
+
+
+          - title: Provide user data to instances
+            url: /cloud_cli_userdata.html
+            output: web
+
+      - title: Managing instances
+        output: web
+        subfolderitems:
+
+        - title: Overview
+          url: /cloud_cli_instances_hosts.html
+          output: web
+
+        - title: Manage IP addresses
+          url: /cloud_cli_instance_ip.html
+          output: web
+
+
+        - title: Resizing an instance
+          url: /cloud_cli_instance_resize.html
+          output: web
+
+        - title: Starting and stopping an instance
+          url: /cloud_cli_instance_restart.html
+          output: web
+
+        - title: Search for an instance by IP address
+          url: /cloud_cli_instance_search_ip.html
+          output: web
+
+        - title: Reboot an instance
+          url: /cloud_cli_instance_reboot.html
+          output: web
+
+        - title: Delete an instance
+          url: /cloud_cli_instance_delete.html
+          output: web
+
+        - title: Access an instance via the console
+          url: /cloud_cli_instance_console.html
+          output: web
+
+    - title: Managing volumes
+      url: /cloud_cli_volumes.html
+      output: web
+
+    - title: Managing object containers
+      url: /cloud_cli_object_containers.html
+      output: web
+
+    - title: Managing VPNs
+      url: /cloud_cli_vpns.html
+      output: web
+
+    - title: Managing Load balancers
+      url: /cloud_cli_loadbalancers.html
+      output: web
+
+    - title: Managing Shares
+      url: /cloud_cli_shares.html
+      output: web
+
+  - title: More information
+    output: web
+    folderitems:
+    - title: FAQ
+      url: /cloud_faq.html
+      output: web
+
+    - title: Glossary
+      url: /cloud_glossary.html
+      output: web
+
+    - title: Knowledge Base
+      url: /cloud_kb.html
+      output: web
+
+
