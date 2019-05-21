@@ -5,7 +5,7 @@ sidebar: cloud_sidebar
 tags: cloud, faq, object_storage
 keywords: frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse
 last_updated: May 20, 2019
-summary: "You can use an accordion-layout that takes advantage of Bootstrap styling. This is useful for an FAQ page."
+summary: "Frequently asked questions regarding the Cloud Platform Object Storage"
 toc: false
 folder: cloud
 ---
