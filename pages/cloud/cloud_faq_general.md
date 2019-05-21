@@ -19,20 +19,25 @@ folder: cloud
                         </div>
                         <div id="collapseOneGeneral" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            For more information regarding the status about our network and services we have a special CloudVPS status page.
+<div markdown="1">
+For more information regarding the status about our network and services we have a special CloudCentral status page.
 
 With the use of statuspage you have a full insight regarding all our platforms
 
-U can find the status pages at the following link https://cloudvps-status.com/
+You can find the status pages at the following link [Service Status](https://status.cloudcentral.com.au)
 
 Platforms you can subscribe for:
 
-Netwerkinfrastructure
-Availability zones
-OpenStack API
-Dashboards en interfaces
-Back-up-services
-Next to this you can subscribe for notications by email using https://cloudvps-status.com/ When our network or services status changes you will be notified by email.
+* Netwerkinfrastructure
+* Availability zones
+* OpenStack API
+* Dashboards en interfaces
+* Back-up-services
+
+Next to this you can subscribe for notications by email using [Service Status](https://status.cloudcentral.com.au)
+
+When our network or services status changes you will be notified by email.
+</div>
                             </div>
                         </div>
                     </div>
@@ -45,7 +50,9 @@ Next to this you can subscribe for notications by email using https://cloudvps-s
                         </div>
                         <div id="collapseTwoGeneral" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            You can find all developer related documentation including the API documentation on the OpenStack official developer page: http://developer.openstack.org
+<div markdown="1">
+You can find all developer related documentation including the API documentation on the OpenStack official developer page: [http://developer.openstack.org](http://developer.openstack.org)
+</div>
                             </div>
                         </div>
                     </div>
@@ -58,20 +65,23 @@ Next to this you can subscribe for notications by email using https://cloudvps-s
                         </div>
                         <div id="collapseThreeGeneral" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            The default Openstack quotas are:
+<div markdown="1">
+The default Openstack quotas are:
 
-Max cloud servers: 30
-Maximum CPU Cores: 180
-Maximum RAM: 150G
-Maximum volumes: 20
-Maximum Volume Space: 8T
-Maximum floating IPs: 100
-Maximum number of networks: 5
-Maximum number of routers: 10
-Maximum number of images: 20
-Maximum number of snapshots: 30
-If you want your quota raised, please contact our Support department at support@cloudvps.com.
-Do note that test accounts have lower quotas.
+* Max cloud servers: 30
+* Maximum CPU Cores: 180
+* Maximum RAM: 150G
+* Maximum volumes: 20
+* Maximum Volume Space: 8T
+* Maximum floating IPs: 100
+* Maximum number of networks: 5
+* Maximum number of routers: 10
+* Maximum number of images: 20
+* Maximum number of snapshots: 30
+
+If you want your quota raised, please contact our [Support department](https://connect.cloudcentral.com.au)
+</div>
+{% include note.html content="Test accounts have lower quotas." %}
                             </div>
                         </div>
                     </div>
@@ -111,7 +121,9 @@ Do note that test accounts have lower quotas.
                         </div>
                         <div id="collapseSixGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
-                            Please send us all your feedback and feature requests to our Support department at support@cloudvps.com.
+<div markdown="1">
+Please send us all your feedback and feature requests to our [Support department](https://connect.cloudcentral.com.au).
+</div>
                             </div>
                         </div>
                     </div>
@@ -120,12 +132,14 @@ Do note that test accounts have lower quotas.
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="nocrossref accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSevenGeneral">how do i install the openstack command line clients?</a>
+                                <a class="nocrossref accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSevenGeneral">How do i install the openstack command line clients?</a>
                             </h4>
                         </div>
                         <div id="collapseSevenGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
-                            please see the following official openstack guide: http://docs.openstack.org/user-guide/content/install_clients.html
+<div markdown="1">
+Please see the following [guide][cloud_cli_install]
+</div>
                             </div>
                         </div>
                     </div>
@@ -167,13 +181,19 @@ Do note that test accounts have lower quotas.
                         </div>
                         <div id="collapseTenGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
-                            In our current OpenStack platform instances that are shut down longer than 31 days are automatically migrated to the CloudVPS object store. The advantage is that the VM in the object store is saved three times, replicated in two datacenters. This process is called Shelving and the VM's in Skyline have the status "Shelved". When booted via Skyline, it will automatically unshelve a shelved server and start it, which might cause boot to take a little longer than usual, but only for servers that have been off for more than 31 days. With the API you can shelve a server:
-	 nova stop $VM-UUID
-    nova shelve $VM-UUID
+<div markdown="1">
+With the API you can shelve a server:
+```sh
+nova stop $VM_UUID
+nova shelve $VM_UUID
+```
 To unshelve:
-	nova unshelve $VM-UUID
-	nova start $VM-UUID
-Do note that you need to shut down a server before shelving it, otherwise you get an error. If you try to boot a shelved server, you will also get an error, the server needs to be unshelved first.
+```sh
+nova unshelve $VM_UUID
+nova start $VM_UUID
+```
+{% include note.html content="Do note that you need to shut down a server before shelving it, otherwise you get an error. If you try to boot a shelved server, you will also get an error, the server needs to be unshelved first." %}
+</div>
                             </div>
                         </div>
                     </div>
@@ -187,7 +207,9 @@ Do note that you need to shut down a server before shelving it, otherwise you ge
                         </div>
                         <div id="collapseElevenGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
-                            Yes. You can contact our Support department at support@cloudvps.com to either raise or lower your quota per tenant/project.
+<div markdown="1">
+Yes. You can contact our [Support department](https://connect.cloudcentral.com.au) to either raise or lower your quota per tenant/project.
+</div>
                             </div>
                         </div>
                     </div>
@@ -215,7 +237,9 @@ Do note that you need to shut down a server before shelving it, otherwise you ge
                         </div>
                         <div id="collapseThirteenGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
-                            Do you have an OpenStack Control Panel?
+<div markdown="1">
+Yes, please access the [Dashboard](https://console.cloudcentral.com.au)
+</div>
                             </div>
                         </div>
                     </div>

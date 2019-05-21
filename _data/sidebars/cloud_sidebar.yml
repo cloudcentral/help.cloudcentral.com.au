@@ -211,7 +211,6 @@ entries:
     - title: Object Storage
       url: /cloud_faq_object_storage.html
       output: web
-    - title: Dashboard
 
   - title: More information
     output: web
