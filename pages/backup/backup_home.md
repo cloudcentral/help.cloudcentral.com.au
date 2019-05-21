@@ -7,6 +7,7 @@ permalink: backup_home.html
 folder: backup
 ---
 <div class="row">
+{% include note.html content="The backup documentation is currently under construction." %}
         <div class="col-lg-12">
             <h2 class="page-header">Services Panels</h2>
         </div>

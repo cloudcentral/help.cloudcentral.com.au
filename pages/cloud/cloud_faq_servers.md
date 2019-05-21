@@ -32,19 +32,21 @@ folder: cloud
                         </div>
                         <div id="collapseTwoServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            In case you use a Floating IP address, the server will be communicating with the router IP address as its source address. You can verify this by issuing the following command:
+<div markdown="1"> 
+In case you use a Floating IP address, the server will be communicating with the router IP address as its source address. You can verify this by issuing the following command:
 
-
+```sh
 dig +short myip.opendns.com @resolver1.opendns.com
-
+```
 or
-
+```sh
 curl ifcfg.me
-
+```
 
 The response will show you the IP address from which your server is communicating with.
 
 You however are allowed to set the floating IP as default gateway instead of the router IP. The instance will then use the floating IP as source address.
+</div>
                             </div>
                         </div>
                     </div>
@@ -72,31 +74,32 @@ You however are allowed to set the floating IP as default gateway instead of the
                         </div>
                         <div id="collapseFourServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Our Supported Images do not come with a swap partition. If you want swap you can add it as a swap file.
-
+<div markdown="1"> 
+Our Supported Images do not come with a swap partition. If you want swap you can add it as a swap file.
 
 First create a swap file, in this example 512 MB (1024 * 512MB = 524288 block size):
-
+```sh
 dd if=/dev/zero of=/swap bs=1024 count=524288
-
+```
 Execute the following to set up the swap:
-
+```sh
 mkswap /swap
-
+```
 Set the correct permissions on the file:
-
+```sh
 chown root:root /swap
 chmod 0600 /swap
-
+```
 Activate the swapfile:
-
+```sh
 swapon /swap
-
+```
 Add it to /etc/fstab to make sure it is loaded at boot:
-
+```sh
 vim /etc/fstab:
 /swap swap swap defaults 0 0
- 
+```
+</div>
 
 
                             </div>
@@ -205,9 +208,8 @@ For Debian/Ubuntu, see this guide.
                         </div>
                         <div id="collapseElevenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Server
-
-
+<div markdown="1"> 
+Server
 
 For servers we don't support snapshots from Skyline. You can however create an image of it:
 
@@ -237,6 +239,7 @@ Volumes
 Log in to Skyline
 Navigate to the volume you want to snapshot
 Click "Create Snapshot"
+</div>
                             </div>
                         </div>
                     </div>
@@ -266,11 +269,13 @@ Click "Create Snapshot"
                         </div>
                         <div id="collapseThirteenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Login to Skyline
+<div markdown="1"> 
+Login to Skyline
 Navigate to the server you want to clone
 Click "Create Image"
 Wait for the image creation to finish
 Create a new server based of this image via the "New Server" button
+</div>
                             </div>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ permalink: monitoring_home.html
 folder: monitoring
 ---
 <div class="row">
+{% include note.html content="The monitoring documentation is currently under construction." %}
         <div class="col-lg-12">
             <h2 class="page-header">Services Panels</h2>
         </div>
