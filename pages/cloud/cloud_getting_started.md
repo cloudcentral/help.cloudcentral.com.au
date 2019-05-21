@@ -20,38 +20,38 @@ In this guide we'll walk through all the steps to get a new instance set up in a
 
 
 ## Public or Private network
- 
+
 
 If you want a VPS with just a public IP address (no private network), less steps are required. You can skip the "Create Network" step.
 
 ## Creating security groups
- 
+
 
 Security groups are firewall rules for your instances. You can use them to allow or limit certain traffic or ports. The default security group doesn't allow any incoming traffic. We must create our own security group to allow traffic.
 
-In the menu under 'Compute', click "Access and Security". Make sure you're on the tab "Security groups".
+In the menu under 'Network', click "Security Groups".
 
-Click "+ Create Security Group". Name it "allow-web-management". We will allow port 80, 443 and 22 in this example.
+* Click "+ Create Security Group".
 
-Click "Manage Rules" for this new security group.
+  * Name it "allow-web-management".
 
-Click " + Add Rule"
+* We will allow port 80, 443 and 22 in this example.
 
-Add the following ingress rules:
+* Click "Manage Rules" for this new security group.
 
-ALL ICMP
-HTTP
-HTTPS
-SSH
+* Click "+ Add Rule"
+
+* Add the following ingress rules:
+
+  * ALL ICMP
+  * HTTP
+  * HTTPS
+  * SSH
+
 If you want you can limit the rule to a specific IP or range by entering that in the CIDR field.
 
- 
-
-
-
-
 ## Adding SSH key
- 
+
 
 SSH will be used to manage your instance via the command line. Our images have Cloud Init and will automatically place your SSH key in the instance so you can access the instance right away.
 
@@ -65,12 +65,12 @@ We do not recommend the above. Please generate the SSH key yourself and make sur
 
 Click "Import Key Pair" and paste your public key. Give it a recognizable name.
 
- 
+
 
 
 
 ## Create Network
- 
+
 
 If you want an instance with just a public IP, then you can skip the following steps until "Launch Instance". If you want a instance in a private network, you must first create a few resources.
 
@@ -90,10 +90,10 @@ Click the "Create" button. Your network will now be created.
 
 
 
- 
+
 
 ## Create router
- 
+
 
 To allow your newly created network internet access you need a router. The router works just as at home, all traffic from instances in the network will go through the router.
 
@@ -109,18 +109,18 @@ Click the newly created router and in the overview screen, click "+ Add Interfac
 
 
 
- 
 
 
 
- 
+
+
 
 
 
 We're now ready to launch our first instance.
 
 ## Launch instance
- 
+
 
 In the menu, click "Compute", submenu "Instances". Click "+ Launch Instance".
 
@@ -145,10 +145,10 @@ In the overview screen your instance will be listed, first with state "Spawning"
 If the instance has a public IP, you can login to it directly. If the instance is in the private network, we need to add a floating IP.
 
 
- 
+
 
 ## Add a floating IP
- 
+
 
 In the menu, select "Compute", submenu "Access and security", tab "Floating IPs".
 
@@ -162,10 +162,10 @@ In the list, on the server you want to allocate the floating IP to, under "Actio
 
 
 
- 
+
 
 Finished
- 
+
 
 You can now SSH into the server and do anything you please. Congratiolations, your first OpenStack server is setup!
 

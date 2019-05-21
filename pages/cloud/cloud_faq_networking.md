@@ -347,8 +347,9 @@ You are now able to test the floating ip by pinging it from a remote host. It is
                         <div id="collapseThreeNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-We use MTU 1500 (default). Jumbo frames are not supported in the Openstack platform, an MUT lower than 1500 however is.
+We use MTU 9000.
 
+Jumbo frames are supported in the Openstack platform.
 </div >
 
 
@@ -365,7 +366,9 @@ We use MTU 1500 (default). Jumbo frames are not supported in the Openstack platf
                         <div id="collapseFourNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-Yes. As long as you do not delete the Router it will keep the same IP address.
+Yes.
+
+As long as you do not delete the Router it will keep the same IP address.
 </div >
 
 
@@ -383,7 +386,9 @@ Yes. As long as you do not delete the Router it will keep the same IP address.
                         <div id="collapseFiveNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-This is because OpenStack assigns Security Groups to ports. When a network is detached or disconnected the corresponding port is removed, including all the security groups attached to that port.
+This is because OpenStack assigns Security Groups to ports.
+
+When a network is detached or disconnected the corresponding port is removed, including all the security groups attached to that port.
 </div >
 
 
@@ -403,14 +408,14 @@ This is because OpenStack assigns Security Groups to ports. When a network is de
 <div markdown="1">
 The reverse DNS of your instance is actually the name of your OpenStack instance. Before using, we validate the name of your OpenStack instance with the following checks
 
-Is the name that you’ve given the OpenStack instance actually a domain name?
-If we lookup the (forward) DNS, do we get a IP address back that is connected to the instance?
-If you run a mail server on port 25, does this return the same hostname when we send a HELO / EHLO request?
-If all of those checks match, the reverse DNS address will be set to the name of your instance.
+* Is the name that you’ve given the OpenStack instance actually a domain name?
+* If we lookup the (forward) DNS, do we get a IP address back that is connected to the instance?
+* If you run a mail server on port 25, does this return the same hostname when we send a HELO / EHLO request?
+* If all of those checks match, the reverse DNS address will be set to the name of your instance.
 
 If you already have an existing instance in OpenStack, but the name does not yet match those requirements, you can easily change it via the OpenStack API or by using our Skyline interface. We will check once a day if the requirements are met.
 
-If the checks fail, a reverse DNS will be generated. For example vm-<uuid>.public.cloudvps.com
+If the checks fail, a reverse DNS will be generated. For example vm-<uuid>.region.cloudcentral.com.au
 </div >
 
                             </div>
@@ -429,16 +434,15 @@ If the checks fail, a reverse DNS will be generated. For example vm-<uuid>.publi
                             <div class="panel-body">
 <div markdown="1">
 In case you don't use an Floating IP address, the server will be communicating with the IP address of your Router as its source address.
+
 You can verify this by issuing the following command:
-
-
+```sh
 dig +short myip.opendns.com @resolver1.opendns.com
-
+```
 or
-
+```sh
 curl ifcfg.me
-
-
+```
 The response will show you the IP address from which your server is communicating with.
 </div >
 
@@ -457,7 +461,11 @@ The response will show you the IP address from which your server is communicatin
                         <div id="collapseEightNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-Please make sure the private network IP address is attached and active on the eth0 interface. Contact support@cloudvps.com with the UUID of the server if the problem persists. Please include which client was used, the date/timestamp of the error and the error itself (if any).
+Please make sure the private network IP address is attached and active on the eth0 interface.
+
+Contact our [Support Team](https://connect.cloudcentral.com.au) with the UUID of the server if the problem persists.
+
+Please include which client was used, the date/timestamp of the error and the error itself (if any).
 </div >
 
 
@@ -476,7 +484,11 @@ Please make sure the private network IP address is attached and active on the et
                         <div id="collapseNineNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-Please make sure you have no active ports assigned. Disconnnect all related ports from all servers first. Also, you have to delete the router first before you can delete the network.
+Please make sure you have no active ports assigned.
+
+Disconnnect all related ports from all servers first.
+
+Also, you have to delete the router first before you can delete the network.
 </div >
 
 
@@ -514,7 +526,9 @@ Please make sure you have disconnected all active ports assigned.
                         <div id="collapseElevenNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-This is not possible. Please remove the public fixed IP address,  add a private network IP address and attach a Floating IP address to it instead.
+This is not possible.
+
+Please remove the public fixed IP address, add a private network IP address and attach a Floating IP address to it instead.
 </div >
 
 
@@ -533,7 +547,9 @@ This is not possible. Please remove the public fixed IP address,  add a private 
                         <div id="collapseTwelveNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-It is not possible to reassign public fixed IP addresses to another server. Please use Floating addresses instead.
+It is not possible to reassign public fixed IP addresses to another server.
+
+Please use Floating addresses instead.
 </div >
 
 
@@ -541,7 +557,6 @@ It is not possible to reassign public fixed IP addresses to another server. Plea
                         </div>
                     </div>
                     <!-- /.panel -->
- 
  
                 <div class="panel panel-default">
                         <div class="panel-heading">
@@ -571,7 +586,13 @@ IPv6 is not yet supported on OpenStack. We hope to offer this in the forseeable 
                         <div id="collapseFourteenNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-We do not provide support for IP range reservations. You could however reserve as many IP addresses as needed by adding them to you account. They will remain assigend to your account untill you delete them. Please keep in mind that any assigned resources, even if not actively in use will be charged.
+We do not provide support for IP range reservations.
+
+You could however reserve as many IP addresses as needed by adding them to you account.
+
+They will remain assigend to your account untill you delete them.
+
+Please keep in mind that any assigned resources, even if not actively in use will be charged.
 </div >
 
 
@@ -609,7 +630,8 @@ No, this is not possible.
                         <div id="collapseSixteenNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-Yes. Please contact sales@cloudvps.com to inquire more information about the use of hardware firewalls.
+Yes.
+Please contact out [Support Team](https://connect.cloudcentral.com.au) to inquire more information about the use of hardware firewalls.
 </div >
 
 
@@ -627,7 +649,9 @@ Yes. Please contact sales@cloudvps.com to inquire more information about the use
                         <div id="collapseSeventeenNetwork" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-No. You can only attach Floating IP’s to an interface in a private network.
+No.
+
+You can only attach Floating IP’s to an interface in a private network.
 </div >
 
 

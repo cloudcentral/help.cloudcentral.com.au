@@ -21,12 +21,20 @@ folder: cloud
                             <div class="panel-body">
 <div markdown="1">
 Your API credentials contains the follow details:
-* Auth URL
-* Tenant ID
-* Tenant Name
+
+* Authentication URL
+* Domain Name
+* Project Name
 * Username
 * Password
-You can find all those details in the OpenStack product delivery email received after ordering the OpenStack product.You can also find all credentials except the password in Skyline, log in and click the Cog icon, then click Authorization Info.
+
+You can find all those details in the Cloud Platform product delivery email received after ordering the Cloud Platform product.
+
+You can also find all credentials except the password in the [Dashboard](https://console.cloudcentral.com.au)
+
+* [Login to the Dashboard][cloud_dashboard_login]
+* Select the Project Tab and API Access
+* Click View Credentials.
 
 If you are unable to retrieve these details please contact the [Support department](https://connect.cloudcentral.com.au) so we can reset your account details.
 </div>
@@ -58,7 +66,11 @@ You can find all developer related documentation including the API documentation
                         <div id="collapseThreeApi" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-In case of high volume API request, the requests might take longer to process leading to a slower response of the API. We advise you to contact the [Support department](https://connect.cloudcentral.com.au) if the problem persists. Please include which client was used, the date/timestamp of the error and the error itself.
+In case of high volume API request, the requests might take longer to process leading to a slower response of the API.
+
+We advise you to contact the [Support department](https://connect.cloudcentral.com.au) if the problem persists.
+
+Please include which client was used, the date/timestamp of the error and the error itself.
 </div>
                             </div>
                         </div>
@@ -73,7 +85,11 @@ In case of high volume API request, the requests might take longer to process le
                         <div id="collapseFourApi" class="panel-collapse collapse">
                             <div class="panel-body">
 <div markdown="1">
-If you receive 50x errors, please retry to submit the request.  If the problem persists, please contact the [Support department](https://connect.cloudcentral.com.au) with the request and response message. Please include which client was used, the date/timestamp of the error and the error itself.
+If you receive 50x errors, please retry to submit the request.
+
+If the problem persists, please contact the [Support department](https://connect.cloudcentral.com.au) with the request and response message.
+
+Please include which client was used, the date/timestamp of the error and the error itself.
 </div>
                             </div>
                         </div>

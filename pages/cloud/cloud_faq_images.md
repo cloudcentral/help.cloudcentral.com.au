@@ -42,7 +42,11 @@ This is the kernel module that handles the shutdown requests and such.
                         </div>
                         <div id="collapseTwoImages" class="panel-collapse collapse">
                             <div class="panel-body">
-                            Make sure your image has VirtIO Disk and NIC support. We don't support any other formats like IDE, SATA or e1000.
+<div markdown="1">
+Make sure your image has VirtIO Disk and NIC support.
+
+We don't support any other formats like IDE, SATA or e1000.
+</div>
                             </div>
                         </div>
                     </div>
@@ -68,8 +72,7 @@ This is the kernel module that handles the shutdown requests and such.
   * Minimum RAM
   * Image file
 * Click "Upload Image"
-
-Wait for the upload to finish.
+* Wait for the upload to finish.
 </div>
                             </div>
                         </div>
@@ -91,7 +94,7 @@ This is the program that changes the user password, ssh key and makes sure resiz
 
 When you are installing the image, make sure it is installed along.
 
-Follow the steps in their documentation to configure it: http://cloudinit.readthedocs.org/en/latest/
+Follow the steps in their [documentation](http://cloudinit.readthedocs.org/en/latest/) to configure it.
 </div>
                             </div>
                         </div>
@@ -113,47 +116,47 @@ wget http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/10.0/Fre
 ```
 Make sure then OS has VirtIO disk and VirtIO NIC support.
 
-Upload it to Openstack:
+* Upload it to Openstack:
 ```sh
 glance image-create --file FreeBSD-10.0-RELEASE-amd64-disc1.iso --name "FreeBSD-10.0-RELEASE-amd64-disc1.iso" --disk-format iso --container-format bare --progress
 ```
-Create the root volume:
+* Create the root volume:
 ```sh
 cinder create --display-name "freebsd-10-root" 8
 ```
-Now boot a new instance with the ISO and the newly created root volume:
+* Now boot a new instance with the ISO and the newly created root volume:
 ```sh
-nova boot --image &lt;freebsd iso image id&gt; --flavor "Standard 1" --availability-zone NL1 --nic net-id=00000000-0000-0000-0000-000000000000 --block-device-mapping hdb=&lt;volume freebsd-10-root id&gt;:::0 FreeBSD-10.0-RELEASE-install
+nova boot --image <freebsd iso image id> --flavor "Standard 1" --availability-zone NL1 --nic net-id=00000000-0000-0000-0000-000000000000 --block-device-mapping hdb=<volume freebsd-10-root id>:::0 FreeBSD-10.0-RELEASE-install
 ```
-Install the OS to the new disk. Afterwards, stop the instance:
+* Install the OS to the new disk. Afterwards, stop the instance:
 ```sh
-nova stop &lt;install vm id&gt;
+nova stop <install vm id>
 ```
-Detach the volume:
+* Detach the volume:
 ```sh
-nova volume-detach &lt;install vm id&gt; &lt;install root volume id&gt;
+nova volume-detach <install vm id> <install root volume id>
 ```
-Boot a new instance with the installed OS volume as the root volume:
+* Boot a new instance with the installed OS volume as the root volume:
 ```sh
-nova boot --block-device source=volume,id=&lt;root volume id&gt;,dest=volume,shutdown=preserve,bootindex=0 --flavor "Standard 1" --availability-zone NL1 --nic net-id=00000000-0000-0000-0000-000000000000  FreeBSD-10.0-RELEASE
+nova boot --block-device source=volume,id=<root volume id>,dest=volume,shutdown=preserve,bootindex=0 --flavor "Standard 1" --availability-zone NL1 --nic net-id=00000000-0000-0000-0000-000000000000  FreeBSD-10.0-RELEASE
 ```
 That's it. If you also want to create an image of this install to use for new VM's, continue on.
 
-Stop the VM with the volume as root disk:
+* Stop the VM with the volume as root disk:
 ```sh
-nova stop &lt;root volume VM id&gt;
+nova stop <root volume VM id>
 ```
-Terminate the machine, otherwise you cannot detach the volume (ERROR: Can't detach root device volume (HTTP 403)):
+* Terminate the machine, otherwise you cannot detach the volume (ERROR: Can't detach root device volume (HTTP 403)):
 ```sh
-nova delete &lt;id of root volume VM&gt;
+nova delete <id of root volume VM>
 ```
-Convert the volume to an image:
+* Convert the volume to an image:
 ```sh
-cinder upload-to-image &lt;root volume id&gt; FreeBSD-10.0-RELEASE-cloudinit
+cinder upload-to-image <root volume id> FreeBSD-10.0-RELEASE-cloudinit
 ```
-This might take a while. Afterwards you can set the image parameters like Min RAM and Cloudinit Support:
+* This might take a while. Afterwards you can set the image parameters like Min RAM and Cloudinit Support:
 ```sh
-glance image-update --min-disk 8 --min-ram 1024 --property architecture=x86_64 --property image_supports_keypair=true --property image_supports_password=true --property supported=false &lt;id from the converted volume image&gt;
+glance image-update --min-disk 8 --min-ram 1024 --property architecture=x86_64 --property image_supports_keypair=true --property image_supports_password=true --property supported=false <id from the converted volume image>
 ```
 Afterwards you can use it as an image for new VM's.
 </div>

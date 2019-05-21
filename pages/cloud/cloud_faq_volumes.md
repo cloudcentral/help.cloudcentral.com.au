@@ -14,12 +14,16 @@ folder: cloud
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOneVolume">My volume has status error, could you reset it?</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOneVolume">My volume has an error status, could you reset it?</a>
                             </h4>
                         </div>
                         <div id="collapseOneVolume" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes. Please contact support@cloudvs.com with the UUID of the volume and the state you would like it to be reset to (available if not attached or in-use if attached) and we will reset it to your desired state.
+<div markdown="1">
+Yes.
+
+Please contact our [Support Team](https://connect.cloudcentral.com.au) with the UUID of the volume and the state you would like it to be reset to (available if not attached or in-use if attached) and we will reset it to your desired state.
+</div>
                             </div>
                         </div>
                     </div>
@@ -32,7 +36,11 @@ folder: cloud
                         </div>
                         <div id="collapseTwoVolume" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            In case of an outage the volume might become read-only to save your data. Please reboot your server to let it remount correctly again.
+<div markdown="1">
+In case of an outage the volume might become read-only to save your data.
+
+Please reboot your server to let it remount correctly again.
+</div>
                             </div>
                         </div>
                     </div>
@@ -45,7 +53,11 @@ folder: cloud
                         </div>
                         <div id="collapseThreeVolume" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Please contact support@cloudvps.com with the UUID of the stuck volume and we will look into it. Please include which client was used, the date/timestamp of the error and the error itself (if any).
+<div markdown="1">
+Please contact our [Support Team](https://connect.cloudcentral.com.au) with the UUID of the stuck volume and we will look into it.
+
+Please include which client was used, the date/timestamp of the error and the error itself (if any).
+</div>
                             </div>
                         </div>
                     </div>
@@ -58,7 +70,9 @@ folder: cloud
                         </div>
                         <div id="collapseFourVolume" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            While we do not provide an out-of-the box solution, you can however set up a cronjob which communicates with the OpenStack API to automatically take snapshots.
+<div markdown="1">
+While we do not provide an out-of-the box solution, you can however set up a cronjob which communicates with the OpenStack API to automatically take snapshots.
+</div>
                             </div>
                         </div>
                     </div>

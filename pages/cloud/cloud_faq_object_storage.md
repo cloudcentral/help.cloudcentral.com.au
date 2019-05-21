@@ -19,7 +19,9 @@ folder: cloud
                         </div>
                         <div id="collapseOneObject" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            You can do this via https://interface.cloudvps.com, via the User Manager. This is described in more detail here.
+<div markdown="1"> 
+You can do this via the [Dashboard](https://console.cloudcentral.com.au), via the User Manager.
+</div> 
                             </div>
                         </div>
                     </div>
@@ -32,7 +34,9 @@ folder: cloud
                         </div>
                         <div id="collapseTwoObject" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes
+<div markdown="1"> 
+Yes
+</div> 
                             </div>
                         </div>
                     </div>

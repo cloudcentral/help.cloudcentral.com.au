@@ -19,7 +19,11 @@ folder: cloud
                         </div>
                         <div id="collapseOneSecuritygroup" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            We have configured the built-in security groups to have no restriction on all outbound traffic to simplify the setup.
+<div markdown="1">
+We have configured the built-in security groups to have no restriction on all outbound traffic to simplify the setup.
+
+Custom Security Groups can be create and applied blocking outbound access if required.
+</div>
                             </div>
                         </div>
                     </div>
@@ -32,7 +36,9 @@ folder: cloud
                         </div>
                         <div id="collapseTwoSecuritygroup" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes, all Security Group rules will be counted to your quota (default 20).
+<div markdown="1">
+Yes, all Security Group rules will be counted to your quota (default 20).
+</div>
                             </div>
                         </div>
                     </div>
@@ -45,7 +51,11 @@ folder: cloud
                         </div>
                         <div id="collapseThreeSecuritygroup" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Security Groups behave as least restrictive. This means that if you have configured Security Groups with conflicting rules the Security Group with the least restrictive rule will be active. (ALLOW over BLOCK).
+<div markdown="1">
+Security Groups behave as least restrictive.
+
+This means that if you have configured Security Groups with conflicting rules the Security Group with the least restrictive rule will be active. (ALLOW over BLOCK).
+</div>
                             </div>
                         </div>
                     </div>
@@ -58,9 +68,14 @@ folder: cloud
                         </div>
                         <div id="collapseFourSecuritygroup" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes. This can be done through the API with the command:
+<div markdown="1">
+Yes.
 
+This can be done through the API with the command:
+```sh
 nova secgroup-upate <UUID> "<name>" "<description>"
+```
+</div>
                             </div>
                         </div>
                     </div>

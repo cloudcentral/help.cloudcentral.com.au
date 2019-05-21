@@ -19,7 +19,11 @@ folder: cloud
                         </div>
                         <div id="collapseOneServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            If your server has the status resize_prep or the resize takes longer than 4 hours, please contact our support department via support@cloudvps.nl. Please send the UUID of the server along.
+<div markdown="1"> 
+If your server has the status resize_prep or the resize takes longer than 4 hours, please contact our [Support Team](https://connect.cloudcentral.com.au).
+
+Please send the UUID of the server along.
+</div>
                             </div>
                         </div>
                     </div>
@@ -33,7 +37,9 @@ folder: cloud
                         <div id="collapseTwoServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1"> 
-In case you use a Floating IP address, the server will be communicating with the router IP address as its source address. You can verify this by issuing the following command:
+In case you use a Floating IP address, the server will be communicating with the router IP address as its source address.
+
+You can verify this by issuing the following command:
 
 ```sh
 dig +short myip.opendns.com @resolver1.opendns.com
@@ -60,7 +66,11 @@ You however are allowed to set the floating IP as default gateway instead of the
                         </div>
                         <div id="collapseThreeServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes. We advise you to use Security Groups with every type of network or setup.
+<div markdown="1"> 
+Yes.
+
+We advise you to use Security Groups with every type of network or setup.
+</div> 
                             </div>
                         </div>
                     </div>
@@ -75,7 +85,9 @@ You however are allowed to set the floating IP as default gateway instead of the
                         <div id="collapseFourServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1"> 
-Our Supported Images do not come with a swap partition. If you want swap you can add it as a swap file.
+Our Supported Images do not come with a swap partition.
+
+If you want swap you can add it as a swap file.
 
 First create a swap file, in this example 512 MB (1024 * 512MB = 524288 block size):
 ```sh
@@ -115,10 +127,17 @@ vim /etc/fstab:
                         </div>
                         <div id="collapseFiveServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-Most Linux distributions remount disks in read-only mode when they find errors on the disk. First try to reboot or power flip your server. If that does not help, check the Skyline dashboard and our @CloudVPSNetwork  twitter account for possible service disruptions.
+<div markdown="1"> 
+Most Linux distributions remount disks in read-only mode when they find errors on the disk.
 
-If there are none, contact our support department via support@cloudvps.nl. Send the UUID of the affected server(s) and volume(s) along.
+First try to reboot or restart your server.
 
+If that does not help, check the [Dashboard][cloud_dashboard_login] and our [Status Page](http://status.cloudcentral.com.au) for possible service disruptions.
+
+If there are none, contact our [Support Team](https://connect.cloudcentral.com.au).
+
+Send the UUID of the affected server(s) and volume(s) along.
+</div>
                             </div>
                         </div>
                     </div>
@@ -133,7 +152,15 @@ If there are none, contact our support department via support@cloudvps.nl. Send 
                         </div>
                         <div id="collapseSixServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-If your server does not reboot or start up, or hangs on the status powering_on or rebooting please first try to power flip your server. If that does not help, check the Skyline dashboard and our @CloudVPSNetwork for possible service disruptions. If there are none, contact our support department via support@cloudvps.nl. Send the UUID of the affected server(s) and volume(s) along.
+<div markdown="1"> 
+If your server does not reboot or start up, or hangs on the status powering_on or rebooting please first try to power flip your server.
+
+If that does not help, check the [Dashboard][cloud_dashboard_login] and our [Status Page](http://status.cloudcentral.com.au) for possible service disruptions.
+
+If there are none, contact our [Support Team](https://connect.cloudcentral.com.au).
+
+Send the UUID of the affected server(s) and volume(s) along.
+</div>
                             </div>
                         </div>
                     </div>
@@ -147,7 +174,11 @@ If your server does not reboot or start up, or hangs on the status powering_on o
                         </div>
                         <div id="collapseSevenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes. The server will reboot to make the resize active.
+<div markdown="1"> 
+Yes.
+
+The server will reboot to make the resize active.
+</div>
                             </div>
                         </div>
                     </div>
@@ -161,7 +192,13 @@ If your server does not reboot or start up, or hangs on the status powering_on o
                         </div>
                         <div id="collapseEightServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Please check your internet connection, our regular website and our @CloudVPSNetwork twitter account. Contact support@cloudvps.com if the problem persists. Please include the UUID of the server, which client was used, the date/timestamp of the error and the error itself (if any).
+<div markdown="1"> 
+Please check your internet connection, our regular website and our [Service Status](http://status.cloudcentral.com.au).
+
+Contact our [Support Team](https://connect.cloudcentral.com.au) if the problem persists.
+
+Please include the UUID of the server, which client was used, the date/timestamp of the error and the error itself (if any).
+</div>
                             </div>
                         </div>
                     </div>
@@ -175,11 +212,14 @@ If your server does not reboot or start up, or hangs on the status powering_on o
                         </div>
                         <div id="collapseNineServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            First check the security groups to make sure SSH access is allowed. If that is the case and you still cannot login then you need to reboot the server in Single User mode and reset the root password.
+<div markdown="1"> 
+First check the security groups to make sure SSH access is allowed.
 
+If that is the case and you still cannot login then you need to reboot the server in Single User mode and reset the root password.
 
-For CentOS, see the official wiki.
-For Debian/Ubuntu, see this guide.
+* For CentOS, see the [official wiki](http://wiki.centos.org/TipsAndTricks/ResetRootPassword).
+* For Debian/Ubuntu, see [this guide](http://xmodulo.com/2013/02/how-to-reset-root-password-in-debian-ubuntu.html).
+</div>
                             </div>
                         </div>
                     </div>
@@ -193,7 +233,9 @@ For Debian/Ubuntu, see this guide.
                         </div>
                         <div id="collapseTenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            We provide a special script to backup Linux servers to the Objectstore and can be found here: https://www.cloudvps.com/helpcenter/knowledgebase/backup-snapshots/cloudvps-boss-linux-backup-object-store
+<div markdown="1"> 
+We provide a special script to backup Linux servers to the Objectstore and can be found here: https://www.cloudvps.com/helpcenter/knowledgebase/backup-snapshots/cloudvps-boss-linux-backup-object-store
+</div>
                             </div>
                         </div>
                     </div>
@@ -209,36 +251,17 @@ For Debian/Ubuntu, see this guide.
                         <div id="collapseElevenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1"> 
-Server
+## Server
 
-For servers we don't support snapshots from Skyline. You can however create an image of it:
+* [Login to the Dashboard][cloud_dashboard_login]
+* Navigate to the server you want to snapshot
+* Click "Create Image"
 
+## Volumes
 
-
-Log in to Skyline
-Navigate to the server you want to snapshot
-Click "Create Image"
-
-We do support the nova backup option. These backups will show up as Images in Skyline.
-
-
-Make sure you have the Openstack Command Line tools installed and have a computerc file sourced. Execute the following example command:
-
-nova backup UUID backup-name daily 7
-
-This will create an image named "backup-name", it will be a daily image and it will be kept 7 days. See the Official documentation for more info
-To restore either backup types, create a new image from that image.
-
-
-
-Volumes
-
-
-
-
-Log in to Skyline
-Navigate to the volume you want to snapshot
-Click "Create Snapshot"
+* [Login to the Dashboard][cloud_dashboard_login]
+* Navigate to the volume you want to snapshot
+* Click "Create Snapshot"
 </div>
                             </div>
                         </div>
@@ -254,7 +277,9 @@ Click "Create Snapshot"
                         </div>
                         <div id="collapseTwelveServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            It is not possible to convert public fixed IP address to a Floating IP address.
+<div markdown="1"> 
+It is not possible to convert public fixed IP address to a Floating IP address.
+</div>
                             </div>
                         </div>
                     </div>
@@ -270,11 +295,11 @@ Click "Create Snapshot"
                         <div id="collapseThirteenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1"> 
-Login to Skyline
-Navigate to the server you want to clone
-Click "Create Image"
-Wait for the image creation to finish
-Create a new server based of this image via the "New Server" button
+* [Login to the Dashboard][cloud_dashboard_login]
+* Navigate to the server you want to clone
+* Click "Create Image"
+* Wait for the image creation to finish
+* Create a new server based of this image via the "New Server" button
 </div>
                             </div>
                         </div>
@@ -290,7 +315,11 @@ Create a new server based of this image via the "New Server" button
                         </div>
                         <div id="collapseFourteenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes. We provide a special script to backup Linux servers to the Objectstore and can be found here: https://www.cloudvps.com/helpcenter/knowledgebase/backup-snapshots/cloudvps-boss-linux-backup-object-store
+<div markdown="1"> 
+Yes.
+
+We provide a special script to backup Linux servers to the Objectstore and can be found here: https://www.cloudvps.com/helpcenter/knowledgebase/backup-snapshots/cloudvps-boss-linux-backup-object-store
+</div>
                             </div>
                         </div>
                     </div>
@@ -305,7 +334,13 @@ Create a new server based of this image via the "New Server" button
                         </div>
                         <div id="collapseFifteenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes. We only support 64 bit Operating Systems and Images, so you should set the type of the image/server to x86_64 in Skyline. Since x86_64 is backwards compatible you can run x86 software.
+<div markdown="1"> 
+Yes.
+
+We only support 64 bit Operating Systems and Images, so you should set the type of the image/server to x86_64 in the Dashboard.
+
+Since x86_64 is backwards compatible you can run x86 software.
+</div> 
                             </div>
                         </div>
                     </div>
@@ -319,7 +354,15 @@ Create a new server based of this image via the "New Server" button
                         </div>
                         <div id="collapseSixteenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            No, this is not possible. If you have a small server and want more RAM or more cores, resize up to a Small HD Flavour. Small HD Flavours can be up and downsized because the disk size is the same. Flavours above Standard 3 cannot be downsized.
+<div markdown="1"> 
+No, this is not possible.
+
+If you have a small server and want more RAM or more cores, resize up to a Small HD Flavour.
+
+Small HD Flavours can be up and downsized because the disk size is the same.
+
+Flavours above Standard 3 cannot be downsized.
+</div>
                             </div>
                         </div>
                     </div>
@@ -335,7 +378,15 @@ Create a new server based of this image via the "New Server" button
                         </div>
                         <div id="collapseSeventeenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes. Via Skyline you can select the server and the click the Resize button. See the above item on downsizing/downgrading if you, in the future, want to downgrade your instance. Your server will reboot during a resize.
+<div markdown="1"> 
+Yes.
+
+Via the Dashboard you can select the server and the click the Resize button.
+
+See the above item on downsizing/downgrading if you, in the future, want to downgrade your instance.
+
+Your server will reboot during a resize.
+</div>
                             </div>
                         </div>
                     </div>
@@ -350,7 +401,17 @@ Create a new server based of this image via the "New Server" button
                         </div>
                         <div id="collapseEighteenServer" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            Yes. You can install the required packages (apt-get install ubuntu-desktop) and run a regular desktop. Do note that this will consume more resources and might require a more powerful instance.
+<div markdown="1"> 
+Yes.
+
+You can install the required packages and run a regular desktop.
+
+```sh
+apt-get install ubuntu-desktop
+```
+
+{% include note.html content="This will consume more resources and might require a more powerful instance." %}
+</div>
                             </div>
                         </div>
                     </div>

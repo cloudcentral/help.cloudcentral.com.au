@@ -167,7 +167,13 @@ Please see the following [guide][cloud_cli_install]
                         </div>
                         <div id="collapseNineGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
-                            Yes, by default you are allowed to have 3 projects. You can create users and projects in the Customer Interface, https://interface.cloudvps.com. Please contact our Sales department at sales@cloudvps.com if you would like to increase this limit.
+<div markdown="1">
+Yes, by default you are allowed to have 3 projects.
+
+You can create users and projects in the [Dashboard](https://console.cloudcentral.com.au).
+
+Please contact our [Support department](https://connect.cloudcentral.com.au) if you would like to increase this limit.
+</div>
                             </div>
                         </div>
                     </div>
@@ -208,7 +214,9 @@ nova start $VM_UUID
                         <div id="collapseElevenGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
 <div markdown="1">
-Yes. You can contact our [Support department](https://connect.cloudcentral.com.au) to either raise or lower your quota per tenant/project.
+Yes.
+
+You can contact our [Support department](https://connect.cloudcentral.com.au) to either raise or lower your quota per tenant/project.
 </div>
                             </div>
                         </div>
@@ -223,7 +231,11 @@ Yes. You can contact our [Support department](https://connect.cloudcentral.com.a
                         </div>
                         <div id="collapseTwelveGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
-                            No, this is not possible. Flavours are part of our pricing model. You can resize your instance to a bigger flavour but you cannot change a flavour or make your own flavour.
+<div markdown="1">
+No, this is not possible.
+
+Flavors are part of our pricing model. You can resize your instance to a bigger flavour but you cannot change a flavor or make your own flavor.
+</div>
                             </div>
                         </div>
                     </div>
