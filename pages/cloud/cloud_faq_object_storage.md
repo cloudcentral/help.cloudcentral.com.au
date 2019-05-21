@@ -14,12 +14,25 @@ folder: cloud
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOneNetwork">How to configure multiple floating IP's?</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOneObject">How can I reset the ObjectStore password?</a>
                             </h4>
                         </div>
-                        <div id="collapseOneNetwork" class="panel-collapse collapse noCrossRef">
+                        <div id="collapseOneObject" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                            yes
+                            You can do this via https://interface.cloudvps.com, via the User Manager. This is described in more detail here.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwoObject">Do you support Large Objects?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwoObject" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+                            Yes
                             </div>
                         </div>
                     </div>
