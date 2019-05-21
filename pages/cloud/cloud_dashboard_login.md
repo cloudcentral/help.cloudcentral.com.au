@@ -26,6 +26,17 @@ At the login page, enter the following information which has been provided
 
 The top of the window displays your user name. You can also access the Settings tab (OpenStack dashboard — Settings tab) or sign out of the dashboard.
 
+## Region selection
+
+The Cloud Platform is currently available in multiple <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.region}}">regions</a>
+
+* **AustraliaSouthEast**: Melbourne, Australia
+* **AustraliaEast**: Canberra, Australia
+
+Resources can be created in either region and regions can be linked together with VPNs
+
+To change the region you are working in, use the drop down list in the top left corner of the dashboard to select which region you want to operate against.
+
 ## Project tab
 
 Projects are organizational units in the cloud and are also known as tenants or accounts. Each user is a member of one or more projects. Within a project, a user creates and manages instances.
