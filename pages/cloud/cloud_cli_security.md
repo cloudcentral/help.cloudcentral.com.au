@@ -2,7 +2,7 @@
 title: Configure access and security for instances using the CLI
 tags: [cli, image]
 keywords: cli, image
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to configure access and security for instances using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_security.html

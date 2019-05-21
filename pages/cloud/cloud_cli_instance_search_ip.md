@@ -2,7 +2,7 @@
 title: Search for an instance using IP address
 tags: [cli, instance, search, ipaddress]
 keywords: cli, instance, search, ipaddress, networks
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to search for an instance by IP using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_instance_search_ip.html

@@ -2,7 +2,7 @@
 title: Knowledge base
 tags: cloud, kb, knowledge
 keywords: knowledge base, support portal, grid, doc portal
-last_updated: May 17, 2019
+last_updated: May 20, 2019
 summary: "Knowledge base articles on howto perform tasks."
 sidebar: cloud_sidebar
 permalink: cloud_kb.html

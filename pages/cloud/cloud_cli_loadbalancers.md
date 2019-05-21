@@ -2,7 +2,7 @@
 title: Create and manage Load balancers using the CLI
 tags: [cli, loadbalancer]
 keywords: cli, loadbalancer
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to setup Load balancers using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_loadbalancers.html

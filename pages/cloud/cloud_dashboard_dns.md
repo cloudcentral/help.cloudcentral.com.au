@@ -2,7 +2,7 @@
 title: Manage DNS using the dashboard
 tags: [dashboard, dns]
 keywords: dashboard, dns
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to manage DNS using the dashboard"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_dns.html

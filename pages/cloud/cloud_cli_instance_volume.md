@@ -2,7 +2,7 @@
 title: Create and instance from a volume using the CLI
 tags: [cli, volume]
 keywords: cli, volume
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to create an instance from a volume using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_instance_volume.html

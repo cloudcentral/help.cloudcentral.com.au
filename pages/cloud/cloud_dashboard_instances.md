@@ -2,7 +2,7 @@
 title: Launch and manage instances using the Dashboard
 tags: [dashboard, instance]
 keywords: dashboard, instance, launch
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to launch and manage compute instances"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_instances.html

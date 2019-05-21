@@ -2,7 +2,7 @@
 title: Manage instances and hosts using the CLI
 tags: [cli, instance, volume, network, ipaddress]
 keywords: cli, instance, volume, network, ipaddress
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to manage instances using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_instances_hosts.html

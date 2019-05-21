@@ -2,7 +2,7 @@
 title: Login to the dashboard
 tags: [dashboard, getting_started]
 keywords: dashboard, login, authentication
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to login to the dashboard to manage your environment"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_login.html

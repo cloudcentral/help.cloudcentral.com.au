@@ -2,7 +2,7 @@
 title: Provide user data to instances using the CLI
 tags: [cli, userdata]
 keywords: cli, userdata
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to provide userdata to an instance"
 sidebar: cloud_sidebar
 permalink: cloud_cli_userdata.html

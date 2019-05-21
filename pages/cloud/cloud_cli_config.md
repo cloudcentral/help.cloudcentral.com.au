@@ -2,7 +2,7 @@
 title: Set environment variables using the Openstack RC file
 tags: [cli, config, getting_started]
 keywords: cli, config, environment
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to setup environment variables with the Openstack RC file"
 sidebar: cloud_sidebar
 permalink: cloud_cli_config.html

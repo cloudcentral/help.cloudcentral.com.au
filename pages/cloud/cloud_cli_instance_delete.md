@@ -2,7 +2,7 @@
 title: Delete an instance using the CLI
 tags: [cli, instance, delete]
 keywords: cli, instance, delete
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to delete an instance using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_instance_delete.html

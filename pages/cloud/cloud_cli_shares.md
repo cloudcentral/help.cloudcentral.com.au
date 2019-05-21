@@ -2,7 +2,7 @@
 title: Create and manage Shares using the CLI
 tags: [cli, share]
 keywords: cli, share
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to setup Shares using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_shares.html

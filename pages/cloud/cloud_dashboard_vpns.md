@@ -2,7 +2,7 @@
 title: Manage VPNs using the dashboard
 tags: [dashboard, vpn]
 keywords: dashboard, vpn
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to manage VPNs using the dashboard"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_vpns.html

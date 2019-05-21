@@ -2,7 +2,7 @@
 title: Upload and manage images
 tags: [dashboard, image]
 keywords: dashboard, image, upload
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to upload an image for your instances to use"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_images.html

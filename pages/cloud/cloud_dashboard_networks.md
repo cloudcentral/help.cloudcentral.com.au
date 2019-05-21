@@ -2,7 +2,7 @@
 title: Create and manage networks using the Dashboard
 tags: [dashboard, networks]
 keywords: dashboard, network, router
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to create and manage networks, routers and ports"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_networks.html

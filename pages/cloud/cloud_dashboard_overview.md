@@ -1,7 +1,7 @@
 ---
 title: Overview
 keywords: Getting started with the Cloud Platform
-last_updated: July 3, 2016
+last_updated: May 20, 2019
 tags: [getting_started, dashboard]
 summary: "Howto get start using the Cloud Platform"
 sidebar: cloud_sidebar

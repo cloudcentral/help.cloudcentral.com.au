@@ -2,7 +2,7 @@
 title: Reboot an instance using the CLI
 tags: [cli, instance, reboot]
 keywords: cli, instance, reboot
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to reboot an instance using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_instance_reboot.html

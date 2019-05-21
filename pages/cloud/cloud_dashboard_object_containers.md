@@ -2,7 +2,7 @@
 title: Create and manage object containers
 tags: [dashboard, object, storage]
 keywords: dashboard, object
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to create and manage object containers"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_object_containers.html

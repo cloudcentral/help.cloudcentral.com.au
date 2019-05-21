@@ -2,7 +2,7 @@
 title: Create and manage VPNs using the CLI
 tags: [cli, vpn]
 keywords: cli, vpn, environment
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to setup VPNS using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_vpns.html

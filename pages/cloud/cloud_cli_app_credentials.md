@@ -2,7 +2,7 @@
 title: Managing application credentials
 tags: [cli,app_credentials]
 keywords: cli, application credentials
-last_updated: May 17, 2019
+last_updated: May 20, 2019
 summary: "Creating and managing application credentials"
 sidebar: cloud_sidebar
 permalink: cloud_cli_app_credentials.html

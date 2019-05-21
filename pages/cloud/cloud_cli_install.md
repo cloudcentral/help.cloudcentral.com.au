@@ -2,7 +2,7 @@
 title: Installing the CLI tools
 tags: [cli,getting_started]
 keywords: cli
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to install the Openstack CLI tools on various operating systems"
 sidebar: cloud_sidebar
 permalink: cloud_cli_install.html

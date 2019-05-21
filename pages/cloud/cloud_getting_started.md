@@ -1,7 +1,7 @@
 ---
 title: Getting started with the Cloud Platform
 keywords: Getting started with the Cloud Platform
-last_updated: July 3, 2016
+last_updated: May 20, 2019
 tags: [getting_started, cloud]
 summary: "Howto get start using the Cloud Platform to create your first virtual machine and network infrastructure"
 sidebar: cloud_sidebar

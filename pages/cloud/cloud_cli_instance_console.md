@@ -2,7 +2,7 @@
 title: Access an instances console using the CLI
 tags: [cli, instance, console]
 keywords: cli, instance, console
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to access the console of an instance using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_instance_console.html

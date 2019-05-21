@@ -2,7 +2,7 @@
 title: Manage the environment using the CLI
 tags: [cli,cloud, getting_started]
 keywords: cli
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to use the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_overview.html

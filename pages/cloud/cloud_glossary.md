@@ -2,7 +2,7 @@
 title: Glossary
 tags: cloud, glossary
 keywords: definitions, glossaries, terms, style guide
-last_updated: May 17, 2019
+last_updated: May 20, 2019
 summary: "This glossary offers a list of terms and definitions to define a vocabulary for Cloud Platform concepts."
 sidebar: cloud_sidebar
 permalink: cloud_glossary.html

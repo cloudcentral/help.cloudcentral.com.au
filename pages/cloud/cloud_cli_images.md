@@ -2,7 +2,7 @@
 title: Manage images using the CLI
 tags: [cli, image]
 keywords: cli, image
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to create and manage images using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_images.html

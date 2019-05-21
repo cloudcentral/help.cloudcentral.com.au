@@ -2,7 +2,7 @@
 title: Configure access and security for instances
 tags: [dashboard, security, instance]
 keywords: dashboard, instance, security
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to manage security groups and key pairs"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_security.html

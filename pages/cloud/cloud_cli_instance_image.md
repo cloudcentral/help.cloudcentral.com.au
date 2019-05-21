@@ -2,7 +2,7 @@
 title: Create an instance from an image using the CLI
 tags: [cli, instance, image]
 keywords: cli, instance, image
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to create an instance from an image using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_instance_image.html

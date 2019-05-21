@@ -4,7 +4,7 @@ permalink: cloud_faq_general.html
 sidebar: cloud_sidebar
 tags: cloud, faq
 keywords: frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse
-last_updated: November 30, 2015
+last_updated: May 20, 2019
 summary: "You can use an accordion-layout that takes advantage of Bootstrap styling. This is useful for an FAQ page."
 toc: false
 folder: cloud

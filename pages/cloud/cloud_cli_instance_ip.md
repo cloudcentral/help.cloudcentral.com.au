@@ -2,7 +2,7 @@
 title: Manage IP addresses using the CLI
 tags: [cli, instance, ipaddress]
 keywords: cli, instance, ipaddress
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to manage instance IP addresses using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_instance_ip.html

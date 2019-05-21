@@ -2,7 +2,7 @@
 title: Create and manage networks using the CLI
 tags: [cli, network]
 keywords: cli, networks
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to create and manage networks using the CLI"
 sidebar: cloud_sidebar
 permalink: cloud_cli_networks.html

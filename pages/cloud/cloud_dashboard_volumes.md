@@ -2,7 +2,7 @@
 title: Create and manage volumes
 tags: [dashboard, volume]
 keywords: dashboard, volume
-last_updated: April 11, 2018
+last_updated: May 20, 2019
 summary: "How to create and manage volumes for your instances"
 sidebar: cloud_sidebar
 permalink: cloud_dashboard_volumes.html
