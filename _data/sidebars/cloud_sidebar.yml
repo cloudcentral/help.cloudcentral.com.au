@@ -18,6 +18,15 @@ entries:
       url: /cloud_getting_started.html
       output: web
 
+    - title: Glossary
+      url: /cloud_glossary.html
+      output: web
+
+    - title: Knowledge Base
+      url: /cloud_kb.html
+      output: web
+
+
   - title: Using the Dashboard
     output: web
     folderitems:
@@ -211,17 +220,4 @@ entries:
     - title: Object Storage
       url: /cloud_faq_object_storage.html
       output: web
-
-  - title: More information
-    output: web
-    folderitems:
-
-    - title: Glossary
-      url: /cloud_glossary.html
-      output: web
-
-    - title: Knowledge Base
-      url: /cloud_kb.html
-      output: web
-
 
