@@ -203,15 +203,11 @@ Install the Openstack Command line tools and create and source a computerc file.
 
 Use the following command to get a list of images:
 ```sh
-glance image-list
+openstack image list
 ```
 Note down the image name or UUID, and use the following command do download the actual image:
 ```sh
-glance image-download --file CloudVPS-Ubuntu-14.04.img --progress "CloudVPS Ubuntu 14.04"
-```
-The syntax is:
-```sh
-glance image-download --file LOCAL_FILENAME --progress "IMAGE UUID/NAME"
+openstack image save --file CentOS7.img --progress "CentOS7"
 ```
 </div>
                             </div>
