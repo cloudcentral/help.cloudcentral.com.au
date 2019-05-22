@@ -228,23 +228,6 @@ If that is the case and you still cannot login then you need to reboot the serve
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTenServer">How do I create an external backup of my Linux Server</a>
-                            </h4>
-                        </div>
-                        <div id="collapseTenServer" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-<div markdown="1"> 
-We provide a special script to backup Linux servers to the Objectstore and can be found here: https://www.cloudvps.com/helpcenter/knowledgebase/backup-snapshots/cloudvps-boss-linux-backup-object-store
-</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-
- 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
                                 <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseElevenServer">How do I create a snapshot of a server/volume?</a>
                             </h4>
                         </div>
@@ -300,25 +283,6 @@ It is not possible to convert public fixed IP address to a Floating IP address.
 * Click "Create Image"
 * Wait for the image creation to finish
 * Create a new server based of this image via the "New Server" button
-</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-
- 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteenServer">Can I use the ObjectStore to store by Linux backups?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFourteenServer" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-<div markdown="1"> 
-Yes.
-
-We provide a special script to backup Linux servers to the Objectstore and can be found here: https://www.cloudvps.com/helpcenter/knowledgebase/backup-snapshots/cloudvps-boss-linux-backup-object-store
 </div>
                             </div>
                         </div>

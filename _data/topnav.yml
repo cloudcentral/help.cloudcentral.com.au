@@ -14,8 +14,8 @@ topnav_dropdowns:
   folders:
     - title: Links
       folderitems:
-        - title: Contact Support
-          external_url: https://connect.cloudcentral.com.au
+        #- title: Contact Support
+        #  external_url: https://connect.cloudcentral.com.au
         - title: Cloud Platform Console
           external_url: https://console.cloudcentral.com.au
         - title: Monitoring Console
