@@ -235,6 +235,18 @@ The access is created.
 
 The access is removed.
 
+## Mount the share on an instance
+Log into your compute instance and create a folder where the mount will be placed:
+
+```sh
+$ mkdir ~/test_folder
+```
+Mount the NFS share in the compute instance using the export location of the share:
+
+```sh
+$ mount -vt nfs 10.254.0.6:/shares/share-0bfd69a1-27f0-4ef5-af17-7cd50bce6550 ~/test_folder
+```
+
 ## Create snapshot
 1. Create a snapshot.
 

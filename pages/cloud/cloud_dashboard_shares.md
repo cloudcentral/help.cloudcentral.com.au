@@ -52,3 +52,32 @@ Shares can be created in order to provide NFS or CIFS (SMB) storage to instances
 
    The dashboard shows the Share
 
+## Grant access to the share
+
+1. Select the Shares tab, click 'Manage Rules' in the 'Action' dropdown next to the Share
+
+1. Click '+ Add Rule'
+
+1. In the Add Rule dialog box, enter the following values:
+  
+   * Access Type: The type of access restriction (IP, User, Cert)
+   * Access Level: The access level to the share (read-write, read-only)
+   * Access To: What to grant access to, ie an IP address
+
+1. Click Add.
+
+   The dashboard shows the Share
+
+## Mount the share on an instance
+Log into your compute instance and create a folder where the mount will be placed:
+
+```sh
+$ mkdir ~/test_folder
+```
+Mount the NFS share in the compute instance using the export location of the share:
+
+```sh
+$ mount -vt nfs 10.254.0.6:/shares/share-0bfd69a1-27f0-4ef5-af17-7cd50bce6550 ~/test_folder
+```
+
+
