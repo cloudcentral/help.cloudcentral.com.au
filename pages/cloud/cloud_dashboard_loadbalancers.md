@@ -11,13 +11,13 @@ folder: cloud
 
 Load balancers can be created to direct traffic to internal instances.
 
+## Create a Load Balancer
+
 1. [Login to the dashboard](cloud_dashboard_login.html).
 
 1. Select the appropriate project from the drop down menu at the top left.
 
 1. On the Project tab, open the Network tab and click Load Balancers category.
-
-## Create a Load Balancer
 
 1. Click '+ Add Load Balancer'
 
@@ -70,4 +70,17 @@ Load balancers can be created to direct traffic to internal instances.
 
 ## Assigning a floating IP
 
+1. [Login to the dashboard](cloud_dashboard_login.html).
+
+1. Select the appropriate project from the drop down menu at the top left.
+
+1. On the Project tab, open the Network tab and click Load Balancers category.
+
+1. Click 'Floating IP' from the action dropdown
+
+   1. Select the Network to assign the floating IP from
+
+1. Click Add
+
+   The dashboard shows the Load Balancer
 
