@@ -38,7 +38,8 @@ This procedure can be adjusted as necessary to add additional security group rul
 
 1. In the Add Rule dialog box, enter the following values:
 
-   * **Rule**: SSH * **Remote**: CIDR
+   * **Rule**: SSH
+   * **Remote**: CIDR
    * **CIDR**: 0.0.0.0/0
 
    {% include note.html content="To accept requests from a particular range of
@@ -56,6 +57,7 @@ This procedure can be adjusted as necessary to add additional security group rul
    * **Direction**: Ingress
    * **Remote**: CIDR
    * **CIDR**: 0.0.0.0/0
+
 1. Click Add.
 
    Instances will now accept all incoming ICMP packets.
@@ -92,7 +94,7 @@ Create at least one key pair for each project.
    $ chmod 0600 yourPrivateKey.pem
    ```
 
-   {% include note.html content="If you are using the Dashboard from a Windows computer, use PuTTYgen to load the *.pem file and convert and save it as *.ppk. For more information see the WinSCP web page for PuTTYgen." %}
+   {% include note.html content="If you are using the Dashboard from a Windows computer, use PuTTYgen to load the *.pem file and convert and save it as *.ppk. For more information see the [WinSCP web page for PuTTYgen](https://winscp.net/eng/docs/ui_puttygen#other_formats)." %}
 
 1. To make the key pair known to SSH, run the ssh-add command.
 

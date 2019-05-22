@@ -9,20 +9,18 @@ permalink: cloud_dashboard_login.html
 folder: cloud
 ---
 
-## Access the dashboard
+## Login to the dashboard
 
 You can use the dashboard to manage your resources in all regions.
 
 * [https://console.cloudcentral.com.au](https://console.cloudcentral.com.au)
-
-## Login to the dashboard
 
 At the login page, enter the following information which has been provided
 
 * **Domain**: Enter your accounts domain
 * **Username**: Enter your username
 * **Password**: Enters your password
-* **Region**: Select the regions you would like to authenticate against
+* **Region**: Select the region you would like to authenticate against
 
 The top of the window displays your user name. You can also access the Settings tab (OpenStack dashboard — Settings tab) or sign out of the dashboard.
 
@@ -37,6 +35,8 @@ Resources can be created in either region and regions can be linked together wit
 
 To change the region you are working in, use the drop down list in the top left corner of the dashboard to select which region you want to operate against.
 
+{% include image.html file="dashboard/region.png" alt="Select Region" caption="Select Region" %}
+
 ## Project tab
 
 Projects are organizational units in the cloud and are also known as tenants or accounts. Each user is a member of one or more projects. Within a project, a user creates and manages instances.
@@ -48,6 +48,8 @@ From the Project tab, you can view and manage the resources in a selected projec
 From the Project tab, you can access the following categories:
 
 ### Compute tab
+
+{% include image.html file="dashboard/compute_tab.png" alt="Compute Tab" caption="Compute Tab" %}
 
 * **Overview**: View reports for the project.
 * **Instances**: View, launch, create a snapshot from, stop, pause, or reboot instances, or connect to them through VNC.

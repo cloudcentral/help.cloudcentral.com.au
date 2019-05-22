@@ -13,7 +13,7 @@ When you no longer need an instance, you can delete it.
 
 1. List all instances:
    ```sh
-   $ nova list
+   $ openstack server list
    +-------------+----------------------+--------+------------+-------------+------------------+
    | ID          | Name                 | Status | Task State | Power State | Networks         |
    +-------------+----------------------+--------+------------+-------------+------------------+
@@ -22,15 +22,15 @@ When you no longer need an instance, you can delete it.
    | d7efd3e4... | newServer            | ERROR  | None       | NOSTATE     |                  |
    +-------------+----------------------+--------+------------+-------------+------------------+
    ```
-1. Run the nova delete command to delete the instance. The following example shows deletion of the newServer instance, which is in ERROR state:
+1. Run the openstack server delete command to delete the instance. The following example shows deletion of the newServer instance, which is in ERROR state:
    ```sh
-   $ nova delete newServer
+   $ openstack server delete newServer
    ```
    The command does not notify that your server was deleted.
 
-1. To verify that the server was deleted, run the nova list command:
+1. To verify that the server was deleted, run the openstack server list command:
    ```sh
-   $ nova list
+   $ openstack server list
    +-------------+----------------------+--------+------------+-------------+------------------+
    | ID          | Name                 | Status | Task State | Power State | Networks         |
    +-------------+----------------------+--------+------------+-------------+------------------+

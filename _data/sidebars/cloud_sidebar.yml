@@ -18,13 +18,25 @@ entries:
       url: /cloud_getting_started.html
       output: web
 
+      subfolders:
+
+      - title: Essential Info
+        output: web
+        subfolderitems:
+        - title: Images
+          url: /cloud_images.html
+          output: web
+        - title: Flavors
+          url: /cloud_flavors.html
+          output: web
+
     - title: Glossary
       url: /cloud_glossary.html
       output: web
 
-    - title: Knowledge Base
-      url: /cloud_kb.html
-      output: web
+      #- title: Knowledge Base
+      #url: /cloud_kb.html
+      #output: web
 
 
   - title: Using the Dashboard
@@ -57,6 +69,9 @@ entries:
     - title: Managing object containers
       url: /cloud_dashboard_object_containers.html
       output: web
+    - title: Managing DNS
+      url: /cloud_dashboard_dns.html
+      output: web
     - title: Managing Load Balancers
       url: /cloud_dashboard_loadbalancers.html
       output: web
@@ -66,6 +81,14 @@ entries:
     - title: Managing Shares
       url: /cloud_dashboard_shares.html
       output: web
+    - title: Managing Orchestration
+      url: /cloud_dashboard_orchestration.html
+      output: web
+    - title: Managing Container Infrastructure
+      url: /cloud_dashboard_container_infrastructure.html
+      output: web
+
+
 
 
 
@@ -118,10 +141,9 @@ entries:
             url: /cloud_cli_instance_volume.html
             output: web
 
-          #- title: Launch an instance using ISO image
-          #  url: /cloud_cli_instance_iso.html
-          #  output: web
-
+          - title: Launch an instance using ISO image
+            url: /cloud_cli_instance_iso.html
+            output: web
 
           - title: Provide user data to instances
             url: /cloud_cli_userdata.html
@@ -192,6 +214,13 @@ entries:
     - title: Managing Shares
       url: /cloud_cli_shares.html
       output: web
+    - title: Managing Orchestration
+      url: /cloud_cli_orchestration.html
+      output: web
+    - title: Managing Container Infrastructure
+      url: /cloud_cli_container_infrastructure.html
+      output: web
+
 
   - title: Frequently asked Questions
     output: web

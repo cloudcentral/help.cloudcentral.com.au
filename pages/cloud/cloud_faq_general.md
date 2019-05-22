@@ -28,11 +28,9 @@ You can find the status pages at the following link [Service Status](https://sta
 
 Platforms you can subscribe for:
 
-* Netwerkinfrastructure
-* Availability zones
-* OpenStack API
-* Dashboards en interfaces
-* Back-up-services
+* Network
+* API
+* Dashboard
 
 Next to this you can subscribe for notications by email using [Service Status](https://status.cloudcentral.com.au)
 
@@ -66,18 +64,18 @@ You can find all developer related documentation including the API documentation
                         <div id="collapseThreeGeneral" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-The default Openstack quotas are:
+The default Cloud Platform quotas are:
 
-* Max cloud servers: 30
-* Maximum CPU Cores: 180
-* Maximum RAM: 150G
-* Maximum volumes: 20
-* Maximum Volume Space: 8T
-* Maximum floating IPs: 100
-* Maximum number of networks: 5
+* Max servers: 8
+* Maximum CPU Cores: 16
+* Maximum RAM: 16GB
+* Maximum volumes: 8
+* Maximum Volume Space: 1T
+* Maximum floating IPs: 50
+* Maximum number of networks: 100
 * Maximum number of routers: 10
 * Maximum number of images: 20
-* Maximum number of snapshots: 30
+* Maximum number of snapshots: 16
 
 If you want your quota raised, please contact our [Support department](https://connect.cloudcentral.com.au)
 </div>
@@ -153,7 +151,9 @@ Please see the following [guide][cloud_cli_install]
                         </div>
                         <div id="collapseEightGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
-                            Yes
+<div markdown="1">
+Yes, see [here][cloud_dashboard_vpn]
+</div>
                             </div>
                         </div>
                     </div>
@@ -216,7 +216,7 @@ nova start $VM_UUID
 <div markdown="1">
 Yes.
 
-You can contact our [Support department](https://connect.cloudcentral.com.au) to either raise or lower your quota per tenant/project.
+You can contact our [Support department](https://connect.cloudcentral.com.au) to either raise or lower your quota per project.
 </div>
                             </div>
                         </div>
@@ -234,7 +234,7 @@ You can contact our [Support department](https://connect.cloudcentral.com.au) to
 <div markdown="1">
 No, this is not possible.
 
-Flavors are part of our pricing model. You can resize your instance to a bigger flavour but you cannot change a flavor or make your own flavor.
+You can resize your instance to a bigger flavour but you cannot change a flavor or make your own flavor.
 </div>
                             </div>
                         </div>
@@ -256,17 +256,6 @@ Yes, please access the [Dashboard](https://console.cloudcentral.com.au)
                         </div>
                     </div>
                     <!-- /.panel -->
-
-
-
-
-
-
-
-
-
-
-
 
 </div>
 {% include links.html %}

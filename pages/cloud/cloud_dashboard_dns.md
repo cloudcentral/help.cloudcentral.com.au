@@ -23,11 +23,12 @@ DNS Zones and reverse DNS for floating IPs can be created and managed using the 
 
 1. In the Create Zone dialog box, enter the following values according to the zone you are creating:
 
-   * Name:
-   * Description
-   * Email address
-   * TTL
-   * Type
+   * **Name:** The name of the DNS zone to create
+   * **Description:** A description for the DNS zone
+   * **Email address:** Email address for the zone SOA record
+   * **TTL:** Time to Live of the zone in seconds
+   * **Type**: Type of zone to create, Primary or Secondary
+    * **Masters:** If the zone is Secondary, the IPs of the master servers
 
 1. Click Submit.
 
@@ -37,11 +38,12 @@ DNS Zones and reverse DNS for floating IPs can be created and managed using the 
 
 1. In the Create Record Set dialog box, enter the following values according to the record set you are creating:
 
-   * Type:
-   * Name:
-   * Description
-   * TTL
-   * Record
+   * **Type:** The type of DNS record to create
+   * **Name:** The name of the record
+   * **Description:** A Descript of the record
+   * **TTL:** The Time to Live of the record in seconds
+   * **Record:** The data for the record
+
      Click Add Record to add multiple resource records
 
 1. Click Submit.
@@ -52,8 +54,8 @@ DNS Zones and reverse DNS for floating IPs can be created and managed using the 
 
 1. In the Set Domain Name PTR dialog box, enter the following values according to the record set you are creating:
 
-   * Domain Name:
-   * Description
-   * TTL
+   * **Domain Name:** The fully qualified name for the record
+   * **Description:** A description of the record
+   * **TTL:** Time to Live of the record in seconds
 
 1. Click Submit.

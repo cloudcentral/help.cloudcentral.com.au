@@ -39,6 +39,9 @@ The following individual clients are deprecated in favor of a common client. Ins
 * ```neutron``` - Networking API
 * ```nova``` - Compute API and extensions
 * ```swift``` - Object Storage API
+* ```designate``` - DNS API
+* ```manila``` - Share API
+* ```magnum``` - Container Infrastructure API
 
 ## Installing with pip
 Use pip to install the OpenStack clients on a Linux, Mac OS X, or Microsoft Windows system. It is easy to use and ensures that you get the latest version of the client from the Python Package Index. Also, pip enables you to update or remove a package.

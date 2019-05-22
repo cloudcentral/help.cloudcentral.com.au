@@ -14,7 +14,7 @@ summary: This site aims to provide help and support for all products and service
                  <div class="panel-heading">
                      <span class="fa-stack fa-5x">
                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                           <i class="fa fa-server fa-stack-1x fa-inverse"></i>
+                           <i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
                      </span>
                  </div>
                  <div class="panel-body">
@@ -44,7 +44,7 @@ summary: This site aims to provide help and support for all products and service
                  <div class="panel-heading">
                      <span class="fa-stack fa-5x">
                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                           <i class="fa fa-binoculars fa-stack-1x fa-inverse"></i>
+                           <i class="fa fa-server fa-stack-1x fa-inverse"></i>
                      </span>
                  </div>
                  <div class="panel-body">

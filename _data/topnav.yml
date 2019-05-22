@@ -5,8 +5,8 @@ topnav:
   items:
     - title: GitHub
       external_url: https://github.com/cloudcentral
-    - title: News
-      url: /news.html
+    #- title: News
+    #  url: /news.html
 
 #Topnav dropdowns
 topnav_dropdowns:

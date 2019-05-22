@@ -21,21 +21,10 @@ A pool of floating IP addresses, configured by the cloud administrator, is avail
 Use the nova floating-ip-\* commands to manage floating IP addresses.
 
 ## List floating IP address information {#list_floating_ip}
-To list all pools that provide floating IP addresses, run:
-```sh
-$ nova floating-ip-pool-list
-+--------+
-| name   |
-+--------+
-| public |
-| test   |
-+--------+
-```
-{% include note.html content="If this list is empty, the cloud administrator must configure a pool of floating IP addresses." %}
 
 To list all floating IP addresses that are allocated to the current project, run:
 ```sh
-$ nova floating-ip-list
+$ openstack floating ip list
 +--------------+--------------------------------------+----------+--------+
 | Ip           | Instance Id                          | Fixed Ip | Pool   |
 +--------------+--------------------------------------+----------+--------+
@@ -48,9 +37,9 @@ For each floating IP address that is allocated to the current project, the comma
 ## Associate floating IP addresses {#associate_floating_ip}
 You can assign a floating IP address to a project and to an instance.
 
-1. Run the following command to allocate a floating IP address to the current project. By default, the floating IP address is allocated from the public pool. The command outputs the allocated IP address:
+1. Run the following command to allocate a floating IP address to the current project. The command outputs the allocated IP address:
    ```sh
-   $ nova floating-ip-create
+   $ openstack floating ip create external
    +--------------+-------------+----------+--------+
    | IP           | Instance Id | Fixed IP | Pool   |
    +--------------+-------------+----------+--------+
@@ -64,7 +53,7 @@ You can assign a floating IP address to a project and to an instance.
 
 1. List all project instances with which a floating IP address could be associated.
    ```sh
-   $ nova list
+   $ openstack server list
    +---------------------+------+---------+------------+-------------+------------------+
    | ID                  | Name | Status  | Task State | Power State | Networks         |
    +---------------------+------+---------+------------+-------------+------------------+
@@ -74,15 +63,15 @@ You can assign a floating IP address to a project and to an instance.
    ```
 1. Associate an IP address with an instance in the project, as follows:
    ```sh
-   $ nova floating-ip-associate INSTANCE_NAME_OR_ID FLOATING_IP_ADDRESS
+   $ openstack server add floating ip INSTANCE_NAME_OR_ID FLOATING_IP_ADDRESS
    ```
    For example:
    ```sh
-   $ nova floating-ip-associate VM1 172.24.4.225
+   $ openstack server add floating ip VM1 172.24.4.225
    ```
    The instance is now associated with two IP addresses:
    ```sh
-   $ nova list
+   $ openstack server list
    +------------------+------+--------+------------+-------------+-------------------------------+
    | ID               | Name | Status | Task State | Power State | Networks                      |
    +------------------+------+--------+------------+-------------+-------------------------------+
@@ -94,17 +83,17 @@ You can assign a floating IP address to a project and to an instance.
 
    {{site.data.alerts.note}}
    <p>If an instance is connected to multiple networks, you can associate a floating IP address with a specific fixed IP address using the optional --fixed-address parameter:</p>
-   <pre>$ nova floating-ip-associate --fixed-address FIXED_IP_ADDRESS \  INSTANCE_NAME_OR_ID FLOATING_IP_ADDRESS/></pre>
+   <pre>$ openstack server add floating ip --fixed-address FIXED_IP_ADDRESS \  INSTANCE_NAME_OR_ID FLOATING_IP_ADDRESS</pre>
    {{site.data.alerts.end}}
 
 ## Disassociate floating IP addresses {#associate_floating_ip}
 To disassociate a floating IP address from an instance:
 ```sh
-$ nova floating-ip-disassociate INSTANCE_NAME_OR_ID FLOATING_IP_ADDRESS
+$ openstack server remove floating ip INSTANCE_NAME_OR_ID FLOATING_IP_ADDRESS
 ```
 To remove the floating IP address from a project:
 ```sh
-$ nova floating-ip-delete FLOATING_IP_ADDRESS
+$ openstack floating ip delete FLOATING_IP_ADDRESS
 ```
 The IP address is returned to the pool of IP addresses that is available for all projects. If the IP address is still associated with a running instance, it is automatically disassociated from that instance.
 

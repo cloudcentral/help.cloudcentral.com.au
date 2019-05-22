@@ -147,7 +147,7 @@ This command does not provide any output.
 {% include note.html content="When extending an LVM volume with a snapshot, the volume will be deactivated. The reactivation is automatic unless auto_activation_volume_list is defined in lvm.conf. See lvm.conf for more information." %}
 
 ## Delete a volume
-To delete your volume, you must first detach it from the server. To detach the volume from your server and check for the list of existing volumes, see steps 1 and 2 in Resize_a_volume.
+To delete your volume, you must first detach it from the server. To detach the volume from your server and check for the list of existing volumes, see steps 1 and 2 in [Resize a volume](#resize-a-volume).
 
 Delete the volume using either the volume name or ID:
 ```shell
@@ -352,3 +352,5 @@ The following example unmanages the my-snapshot-id image:
 ```shell
 $ openstack snapshot unset my-snapshot-id
 ```
+
+{% include links.html %}

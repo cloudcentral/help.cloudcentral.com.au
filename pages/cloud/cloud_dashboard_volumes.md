@@ -69,6 +69,7 @@ You can view the status of a volume in the Volumes tab of the dashboard. The vol
 Now you can log in to the instance and mount, format, and use the disk.
 
 ## Detach a volume from an instance
+{% include note.html content="It is not possible to detach the root volume from an instance, the instance can be deleted (if delete volume on instance delete is false)" %}
 1. [Log in to the dashboard](cloud_dashboard_login.html).
 1. Select the appropriate project from the drop down menu at the top left.
 1. On the Project tab, open the Volumes tab and click the Volumes category.
@@ -108,9 +109,10 @@ A message indicates whether the action was successful.
 
 1. Click Edit Volume.
 
-   {% include note.html content="You can extend a volume by using the Extend Volume option available in the More dropdown list and entering the new value for volume size." %}
+{% include note.html content="You can extend a volume by using the Extend Volume option available in the More dropdown list and entering the new value for volume size." %}
 
 ## Delete a volume
+{% include note.html content="Volumes that have snapshots, backups, or images cant be deleted until the child object are removed." %}
 When you delete an instance, the data in its attached volumes is not deleted.
 
 1. [Log in to the dashboard](cloud_dashboard_login.html).

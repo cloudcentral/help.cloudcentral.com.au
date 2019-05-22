@@ -39,7 +39,7 @@ You can generate a key pair or upload an existing public key.
    ```shell
    $ openstack keypair create KEY_NAME > MY_KEY.pem
    ```
-   This command generates a key pair with the name that you specify for KEY_NAME, writes the private key to the .pem file that you specify, and registers the public key to the Nova database.
+   This command generates a key pair with the name that you specify for KEY_NAME, writes the private key to the .pem file that you specify, and registers the public key.
 
 1. To set the permissions of the .pem file so that only you can read and write to it, run the following command.
    ```shell
@@ -52,7 +52,7 @@ You can generate a key pair or upload an existing public key.
    ```shell
    $ openstack keypair create --public-key ~/.ssh/id_rsa.pub KEY_NAME
    ```
-   This command registers the public key at the Nova database and names the key pair the name that you specify for KEY_NAME.
+   This command registers the public key and names the key pair the name that you specify for KEY_NAME.
 
 1. To ensure that the key pair has been successfully imported, list key pairs as follows:
 
@@ -70,7 +70,7 @@ You can generate a key pair or upload an existing public key.
 1. To create a security group with a specified name and description, enter the following command:
 
    ```shell
-   $ openstack security group create SECURITY_GROUP_NAME --description GROUP_DESCRIPTION
+   $ openstack security group create --description GROUP_DESCRIPTION SECURITY_GROUP_NAME
    ```
 1. To delete a specified group, enter the following command:
 
@@ -93,13 +93,19 @@ Modify security group rules with the nova secgroup-\*-rule commands. Before you 
    - Allow access from all IP addresses, specified as IP subnet 0.0.0.0/0 in CIDR notation:
 
      ```shell
-     $ nova secgroup-add-rule SECURITY_GROUP_NAME tcp 22 22 0.0.0.0/0
+     $ openstack security group rule create --protocol tcp \
+                                            --dst-port 22 \
+                                            --remote-ip 0.0.0.0/0 \
+                                            SECURITY_GROUP_NAME
      ```
    - Allow access only from IP addresses from other security groups (source groups) to access the specified port:
 
      ```shell
-     $ nova secgroup-add-group-rule --ip_proto tcp --from_port 22 \
-           --to_port 22 SECURITY_GROUP_NAME SOURCE_GROUP_NAME
+     $ openstack security group rule create --protocol tcp \
+                                            --dst-port 22 \
+                                            --remote-group \
+                                            SOURCE_GROUP_NAME \
+                                            SECURITY_GROUP_NAME
      ```
 
 1. To allow pinging of the instances, choose one of the following options:
@@ -107,27 +113,39 @@ Modify security group rules with the nova secgroup-\*-rule commands. Before you 
    - Allow pinging from all IP addresses, specified as IP subnet 0.0.0.0/0 in CIDR notation.
 
      ```shell
-     $ nova secgroup-add-rule SECURITY_GROUP_NAME icmp -1 -1 0.0.0.0/0
+     $ openstack security group rule create --protocol icmp \
+                                            --remote-ip 0.0.0.0/0 \
+                                            SECURITY_GROUP_NAME
+ 
      ```
 
      This allows access to all codes and all types of ICMP traffic.
 
    - Allow only members of other security groups (source groups) to ping instances.
      ```shell
-     $ nova secgroup-add-group-rule --ip_proto icmp --from_port -1 \
-          --to_port -1 SECURITY_GROUP_NAME SOURCE_GROUP_NAME
+     $ openstack security group rule create --protocol icmp \
+                                            --remote-group \
+                                            SOURCE_GROUP_NAME \
+                                            SECURITY_GROUP_NAME
      ```
 1. To allow access through a UDP port, such as allowing access to a DNS server that runs on a VM, choose one of the following options:
 
    - Allow UDP access from IP addresses, specified as IP subnet 0.0.0.0/0 in CIDR notation.
      ```shell
-     $ nova secgroup-add-rule SECURITY_GROUP_NAME udp 53 53 0.0.0.0/0
+     $ openstack security group rule create --protocol udp \
+                                            --dst-port 53 \
+                                            --remote-ip 0.0.0.0/0 \
+                                            SECURITY_GROUP_NAME
+ 
      ```
    - Allow only IP addresses from other security groups (source groups) to access the specified port.
 
      ```shell
-     $ nova secgroup-add-group-rule --ip_proto udp --from_port 53 \
-           --to_port 53 SECURITY_GROUP_NAME SOURCE_GROUP_NAME
+     $ openstack security group rule create --protocol udp \
+                                            --dst-port 53 \
+                                            --remote-group \
+                                            SOURCE_GROUP_NAME \
+                                            SECURITY_GROUP_NAME
      ```
 
 ## Delete a security group rule
@@ -135,5 +153,8 @@ To delete a security group rule, specify the same arguments that you used to cre
 
 For example, to delete the security group rule that permits SSH access from all IP addresses, run the following command.
 ```shell
-$ nova secgroup-delete-rule SECURITY_GROUP_NAME tcp 22 22 0.0.0.0/0
+$ openstack security group rule delete --protocol tcp \
+                                       --dst-port 22 \
+                                       --remote-ip 0.0.0.0/0 \
+                                       SECURITY_GROUP_NAME
 ```

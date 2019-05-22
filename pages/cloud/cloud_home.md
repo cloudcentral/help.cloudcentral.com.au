@@ -6,6 +6,9 @@ toc: false
 permalink: cloud_home.html
 folder: cloud
 ---
+Welcome to CloudCentrals Help and Support site for the Cloud Platform
+
+Here you will find all the information required to get started using the Cloud Platform
 <div class="row">
         <div class="col-md-4 col-sm-6">
             <div class="panel panel-default text-center">

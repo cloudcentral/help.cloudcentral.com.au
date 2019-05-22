@@ -85,7 +85,7 @@ While we do not provide an out-of-the box solution, you can however set up a cro
                         </div>
                         <div id="collapseFiveVolume" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-<div markdown="1"> 
+<div markdown="1">
 Just as when throwing away a physical computer, it is a good practice to shred all data on a virtual hard disk, when a virtual machine is deleted or a volume is removed. Overwriting all space with specialized software so that data cannot be read or retreived when the space later provisioned to another user.
 
 The responsibility of the correct and complete wipe of data is with the end user. Because of our IaaS service, we don't know what our customers do with the resources they pay for, what data they save or process and therefore we cannot do any assumptions on the security measurements required to accurately wipe the disk.
@@ -122,13 +122,13 @@ In some cases volumes are using the virtio-scsi driver instead of virtio, you mu
 
 It's important to keep in mind that there is no confirmation of the shred command. If you provide the wrong path, you might wipe the wrong data. This cannot be recovered.
 
-In the official documentation of 'shred' you can read more on how the software works and other command line parameters: https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation
+In the [official documentation](https://www.gnu.org/software/coreutils/manual/html_node/shred-invocation) of 'shred' you can read more on how the software works and other command line parameters.
 
-On Windows you can use 'sdelete'. See the official Microsoft documentation for usage instructions: https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete.
+On Windows you can use 'sdelete'. See the official [Microsoft documentation](https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete) for usage instructions.
 
-If you need a graphical interface on Windows you can for example use: http://www.killdisk.com/eraser.htm or https://eraser.heidi.ie/.
+If you need a graphical interface on Windows you can for example use: [http://www.killdisk.com/eraser.htm](http://www.killdisk.com/eraser.htm) or [https://eraser.heidi.ie/](https://eraser.heidi.ie/).
 
-If you have any questions, please contact our support via support@cloudvps.nl.
+If you have any questions, please contact our [Support Team](https://connect.cloudcentral.com.au)
 </div>
 
                             </div>

@@ -22,7 +22,7 @@ folder: cloud
 <div markdown="1">
 We have configured the built-in security groups to have no restriction on all outbound traffic to simplify the setup.
 
-Custom Security Groups can be create and applied blocking outbound access if required.
+Custom Security Groups can be created and applied blocking outbound access if required.
 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@ Custom Security Groups can be create and applied blocking outbound access if req
                         <div id="collapseTwoSecuritygroup" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
 <div markdown="1">
-Yes, all Security Group rules will be counted to your quota (default 20).
+Yes, all Security Group rules will be counted to your quota (default 100).
 </div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@ Yes.
 
 This can be done through the API with the command:
 ```sh
-nova secgroup-upate <UUID> "<name>" "<description>"
+$ openstack security group set --name <name> --description <description> <UUID>
 ```
 </div>
                             </div>
