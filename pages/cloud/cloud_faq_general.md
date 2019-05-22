@@ -152,7 +152,7 @@ Please see the following [guide][cloud_cli_install]
                         <div id="collapseEightGeneral" class="panel-collapse collapse">
                             <div class="panel-body">
 <div markdown="1">
-Yes, see [here][cloud_dashboard_vpn]
+Yes, see [here][cloud_dashboard_vpns]
 </div>
                             </div>
                         </div>
