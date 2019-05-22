@@ -190,13 +190,13 @@ Please contact our [Support department](https://connect.cloudcentral.com.au) if 
 <div markdown="1">
 With the API you can shelve a server:
 ```sh
-nova stop $VM_UUID
-nova shelve $VM_UUID
+openstack server stop $VM_UUID
+openstack server shelve $VM_UUID
 ```
 To unshelve:
 ```sh
-nova unshelve $VM_UUID
-nova start $VM_UUID
+openstack server unshelve $VM_UUID
+openstack server $VM_UUID
 ```
 {% include note.html content="Do note that you need to shut down a server before shelving it, otherwise you get an error. If you try to boot a shelved server, you will also get an error, the server needs to be unshelved first." %}
 </div>
