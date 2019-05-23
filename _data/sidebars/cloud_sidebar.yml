@@ -20,15 +20,15 @@ entries:
 
       subfolders:
 
-      - title: Essential Info
-        output: web
-        subfolderitems:
-        - title: Images
-          url: /cloud_images.html
-          output: web
-        - title: Flavors
-          url: /cloud_flavors.html
-          output: web
+        #- title: Essential Info
+        #  output: web
+        #subfolderitems:
+        #- title: Images
+        #  url: /cloud_images.html
+        #  output: web
+        #- title: Flavors
+        #  url: /cloud_flavors.html
+        #  output: web
 
     - title: Glossary
       url: /cloud_glossary.html
