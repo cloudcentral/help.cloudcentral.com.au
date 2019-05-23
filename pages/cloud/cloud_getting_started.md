@@ -187,17 +187,18 @@ Either
 
 1. Decrypt the password with your ssh key
 
-```sh
-nova get-password <instance> [<ssh_private_key_path>]
-```
+   ```sh
+   nova get-password <instance> [<ssh_private_key_path>]
+   ```
 
 or
+
+{% include note.html content="Whilst this runs in Javascript in your browser we do not recommend pasting your private ssh key into a web browser!" %}
 
 1. Paste your unecrypted ssh key into the 'Private Key' field and click 'Decrypt'
 
    The admin password will be displayed in the Password field.
 
-   {% include note.html content="Whilst this runs in Javascript in your browser we do not recommend pasting your private ssh key into a web browser!" %}
 
 Congratulations, your first Cloud Platform server is setup!
 
