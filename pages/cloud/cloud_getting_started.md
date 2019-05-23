@@ -9,13 +9,7 @@ permalink: cloud_getting_started.html
 folder: cloud
 ---
 
-We offer a public cloud based on OpenStack. This robust and powerful cloud platform is ideal for companies that need a high-performance Linux environment, are looking for extreme scalability, use their own images, or have a high level of network complexity.
-
-OpenStack is a collection of open source cloud components (compute, networking and storage) for building and running a cloud platform for public, private and hybrid clouds. Supported by companies like HP, Cisco, Red Hat, and IBM.
-
-OpenStack has an enormous momentum. These days, many cloud users want an open platform to build their future cloud infrastructure upon, without having to fear vendor lock-in with first-generation cloud providers like Amazon Web Services and Microsoft. Therefore, companies choose OpenStack
-
-In this guide we'll walk through all the steps to get a new instance set up in a new empty project. At the end you will have a project with the required network components, security groups and SSH keys. This guide will use the Horizon Dashboard. See our [other guide] for the CLI version.
+In this guide we'll walk through all the steps to get a new instance set up in a new empty project. At the end you will have a project with the required network components, security groups and SSH keys. This guide will use the Dashboard.
 
 ## Public or Private network
 
