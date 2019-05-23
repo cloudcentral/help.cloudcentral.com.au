@@ -17,9 +17,9 @@ entries:
       #- title: News Archive
       #url: /news_archive.html
       #output: web
-    - title: FAQ
-      url: /faq.html
-      output: web
+      #- title: FAQ
+      #url: /faq.html
+      #output: web
       #- title: Glossary
       #url: /glossary.html
       #output: web
