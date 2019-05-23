@@ -162,7 +162,7 @@ In the "Project Tab", click "Network" and make sure you're on the "Floating IPs"
 * Click "Allocate IP To Project"
   * select the "external" Pool and click "Allocate IP".
 
-In the "Project Tab", click "Network" and make sure you're on the "Instances" tab.
+In the "Project Tab", click "Compute" and make sure you're on the "Instances" tab.
 
 * In the list, on the server you want to allocate the floating IP to, under "Actions", select the down arrow.
 * Click "Associate Floating IP".
@@ -177,6 +177,27 @@ Windows instances will automatically generate a password for the Administrator u
 
 This password can be retreived and decrypted using the Key pair that was used when creating the instance
 
+In the "Project Tab", click "Compute" and make sure you're on the "Instances" tab.
+
+* Click "Retreive admin password" in the drop down on the right
+
+Either
+
+1. Copy and paste the encrypted password to your local machine
+
+1. Decrypt the password with your ssh key
+
+```sh
+nova get-password <instance> [<ssh_private_key_path>]
+```
+
+or
+
+1. Paste your unecrypted ssh key into the 'Private Key' field and click 'Decrypt'
+
+   The admin password will be displayed in the Password field.
+
+   {% include note.html content="Whilst this runs in Javascript in your browser we do not recommend pasting your private ssh key into a web browser!" %}
 
 Congratulations, your first Cloud Platform server is setup!
 
