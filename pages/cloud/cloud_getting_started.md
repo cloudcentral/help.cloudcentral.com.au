@@ -9,7 +9,9 @@ permalink: cloud_getting_started.html
 folder: cloud
 ---
 
-In this guide we'll walk through all the steps to get a new instance set up in a new empty project. At the end you will have a project with the required network components, security groups and SSH keys. This guide will use the Dashboard.
+## Introduction
+
+In this guide we'll walk through all the steps to get a new instance set up in a new empty project. At the end you will have a project with the required network components, security groups and SSH keys. This guide will use the Dashboard, see [here][cloud_cli_getting_started] if you want to use the CLI.
 
 ## Public or Private network
 

@@ -9,7 +9,7 @@ permalink: cloud_dashboard_loadbalancers.html
 folder: cloud
 ---
 
-Load balancers can be created to direct traffic to internal instances.
+Load balancers can be created to direct traffic to internal instances spread over a pool of hosts.
 
 ## Create a Load Balancer
 
@@ -36,7 +36,7 @@ Load balancers can be created to direct traffic to internal instances.
    * Port: The port for the Listener
    * Client Data Timeout:
    * TCP Inspect Timeout:
-   * Member Connect Timeout: 
+   * Member Connect Timeout:
    * Member Data Timeout:
    * Connection Limit:
    * Insert Headers
@@ -62,13 +62,15 @@ Load balancers can be created to direct traffic to internal instances.
    * Max Retries Down:
    * Delay (sec):
    * Max Retries:
-   * Timeout (sec)
- 
+   * Timeout (sec):
+
 1. Click 'Create Load Balancer'
 
    The dashboard shows the Load Balancer
 
 ## Assigning a floating IP
+
+To make the load balanced service available externally, you can assign a floating ip.
 
 1. [Login to the dashboard](cloud_dashboard_login.html).
 
@@ -84,3 +86,6 @@ Load balancers can be created to direct traffic to internal instances.
 
    The dashboard shows the Load Balancer
 
+## Layer 7 processing
+
+Load balancers can be configured to perform advanced later 7 processing on requests [using the CLI][cloud_cli_loadbalancers_layer7]
