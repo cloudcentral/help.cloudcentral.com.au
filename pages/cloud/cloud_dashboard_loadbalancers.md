@@ -89,3 +89,5 @@ To make the load balanced service available externally, you can assign a floatin
 ## Layer 7 processing
 
 Load balancers can be configured to perform advanced later 7 processing on requests [using the CLI][cloud_cli_loadbalancers_layer7]
+
+{% include links.html %}
